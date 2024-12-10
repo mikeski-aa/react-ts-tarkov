@@ -1,28 +1,33 @@
+import { useState } from "react";
 import GridLine from "./GridLine";
 
-function InventoryGrid() {
-  const array: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+export interface IBoxObject {
+  name: string;
+  item: string;
+  xindex: number;
+  yindex: number;
+}
 
-  const currentArray: any = [
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", "", ""],
-  ];
+function InventoryGrid() {
+  const test: IBoxObject = {
+    name: "gridItem",
+    item: "empty",
+    xindex: 0,
+    yindex: 0,
+  };
+  const [gridArray, setGridArray] = useState(
+    Array(14).fill(Array(10).fill(""))
+  );
+
+  console.log(gridArray);
+
   return (
     <div className="gridHolder">
-      {currentArray.map((item, index) =>
-        item.map((newItem, newIndex) => (
-          <div className="gridItem" key={newIndex}></div>
+      {gridArray.map((item, originalIndex) =>
+        item.map((newItem, index) => (
+          <div className={newItem.name} key={index}>
+            {originalIndex + index}
+          </div>
         ))
       )}
     </div>
