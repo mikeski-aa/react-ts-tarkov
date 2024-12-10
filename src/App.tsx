@@ -17,13 +17,26 @@ function App() {
           draggable
           onDrop={() => handleDropLogic()}
           onDragStart={() => handleDragStart()}
+          onDragOver={(e) => e.preventDefault()}
         >
           X
         </div>
-        <div className="dragboxtest" draggable>
+        <div
+          className="dragboxtest"
+          draggable
+          onDrop={() => handleDropLogic()}
+          onDragStart={() => handleDragStart()}
+          onDragOver={(e) => e.preventDefault()}
+        >
           Y
         </div>
-        <div className="dragboxtest" draggable>
+        <div
+          className="dragboxtest"
+          draggable
+          onDrop={() => handleDropLogic()}
+          onDragStart={() => handleDragStart()}
+          onDragOver={(e) => e.preventDefault()}
+        >
           Y
         </div>
       </div>
