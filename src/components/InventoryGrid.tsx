@@ -1,35 +1,41 @@
 import { useState } from "react";
-import GridLine from "./GridLine";
+import "../styles/inventoryGrid.css";
 
 export interface IBoxObject {
   name: string;
   item: string;
-  xindex: number;
-  yindex: number;
+  xindex: number | null;
+  yindex: number | null;
 }
 
 function InventoryGrid() {
   const test: IBoxObject = {
     name: "gridItem",
     item: "empty",
-    xindex: 0,
-    yindex: 0,
+    xindex: null,
+    yindex: null,
   };
   const [gridArray, setGridArray] = useState(
-    Array(14).fill(Array(10).fill(""))
+    Array(28)
+      .fill(null)
+      .map((_, yIndex) =>
+        Array(10)
+          .fill(null)
+          .map((_, xIndex) => ({ ...test, xindex: xIndex, yindex: yIndex }))
+      )
   );
 
   console.log(gridArray);
 
   return (
     <div className="gridHolder">
-      {gridArray.map((item, originalIndex) =>
-        item.map((newItem, index) => (
-          <div className={newItem.name} key={index}>
-            {originalIndex + index}
-          </div>
-        ))
-      )}
+      {gridArray.map((row, yIndex) => (
+        <div className={`gridRow ${yIndex}`} key={yIndex}>
+          {row.map((_, xIndex) => (
+            <div className={`gridItem ${yIndex} ${xIndex}`} key={xIndex}></div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
