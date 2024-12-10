@@ -32,7 +32,11 @@ function InventoryGrid() {
       {gridArray.map((row, yIndex) => (
         <div className={`gridRow ${yIndex}`} key={yIndex}>
           {row.map((_, xIndex) => (
-            <div className={`gridItem ${yIndex} ${xIndex}`} key={xIndex}></div>
+            <div
+              className={`gridItem ${yIndex} ${xIndex}`}
+              key={xIndex}
+              draggable
+            ></div>
           ))}
         </div>
       ))}

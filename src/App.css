@@ -8,10 +8,19 @@
   height: 100%;
   width: 66%;
   background-color: black;
+  display: flex;
+  justify-content: center;
 }
 
 .gridBlocker {
   height: 100%;
   width: 34%;
   background-color: grey;
+}
+
+.dragboxtest {
+  width: 200px;
+  height: 200px;
+  outline: 2px solid white;
+  margin-top: 10px;
 }

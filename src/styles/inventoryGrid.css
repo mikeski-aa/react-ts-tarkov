@@ -22,3 +22,9 @@
   width: 450px;
   overflow-y: scroll;
 }
+
+.dragboxtest {
+  width: 200px;
+  height: 200px;
+  outline: 2px solid white;
+}
