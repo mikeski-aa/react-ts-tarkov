@@ -1,0 +1,18 @@
+.gridLine {
+  display: flex;
+  width: 100%;
+}
+
+.gridItem {
+  outline: 2px solid grey;
+  width: 25px;
+  height: 25px;
+}
+
+.gridHolder {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: green;
+  width: 100%;
+}
