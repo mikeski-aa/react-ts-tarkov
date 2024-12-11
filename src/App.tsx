@@ -13,6 +13,7 @@ function App() {
   const [itemDragged, setItemDragged] = useState<string>("");
   const [itemReplaced, setItemReplaced] = useState<string>("");
   const [sucDrop, setSucDrop] = useState<boolean>(false);
+  const [forceUpdateKey, setForceUpdateKey] = useState<number>(0);
 
   const test: IBoxObject = {
     name: "gridItem",
@@ -29,6 +30,14 @@ function App() {
           .map((_, xIndex) => ({ ...test, xindex: xIndex, yindex: yIndex }))
       )
   );
+
+  const handleAddItem = () => {
+    let gridCopy = [...gridArray];
+    gridCopy[0][0].item = "X";
+    setGridArray(gridCopy);
+    console.log(gridArray[0][0]);
+    setForceUpdateKey(forceUpdateKey + 1);
+  };
 
   return (
     <div className="mainContent">
@@ -62,8 +71,8 @@ function App() {
         /> */}
       </div>
       <div className="gridBlocker">
-        <button onClick={() => console.log(gridArray)}>cccc</button>
-        <div className="gridHolder">
+        <button onClick={() => handleAddItem()}>cccc</button>
+        <div className="gridHolder" key={forceUpdateKey}>
           {gridArray.map((row, yIndex) => (
             <div className={`gridRow ${yIndex}`} key={yIndex}>
               {row.map((item, xIndex) => (
