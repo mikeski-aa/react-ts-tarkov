@@ -9,48 +9,11 @@ export interface IGridObject {
 }
 
 function App() {
-  const handleDropLogic = () => {
-    alert("test");
-  };
-
-  const handleDragStart = (e: SyntheticEvent) => {
-    const target = e.target as HTMLInputElement;
-    if (target) {
-      console.log(target.innerText);
-    }
-  };
-
+  const [itemDragged, setItemDragged] = useState<string>("");
+  const [itemReplaced, setItemReplaced] = useState<string>("");
   return (
     <div className="mainContent">
-      <div className="tempBlocker">
-        <div
-          className="dragboxtest"
-          draggable
-          onDrop={() => handleDropLogic()}
-          onDragStart={(e) => handleDragStart(e)}
-          onDragOver={(e) => e.preventDefault()}
-        >
-          X
-        </div>
-        <div
-          className="dragboxtest"
-          draggable
-          onDrop={() => handleDropLogic()}
-          onDragStart={(e) => handleDragStart(e)}
-          onDragOver={(e) => e.preventDefault()}
-        >
-          Y
-        </div>
-        <div
-          className="dragboxtest"
-          draggable
-          onDrop={() => handleDropLogic()}
-          onDragStart={(e) => handleDragStart(e)}
-          onDragOver={(e) => e.preventDefault()}
-        >
-          Y
-        </div>
-      </div>
+      <div className="tempBlocker"></div>
       <div className="gridBlocker">{/* <InventoryGrid /> */}</div>
     </div>
   );
