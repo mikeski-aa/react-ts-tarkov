@@ -6,22 +6,29 @@ function ItemTile({
   itemReplaced,
   setItemDragged,
   setItemReplaced,
+  setSucDrop,
+  sucDrop,
 }: {
   val: string;
   itemDragged: string;
   itemReplaced: string;
   setItemDragged: Dispatch<SetStateAction<string>>;
   setItemReplaced: Dispatch<SetStateAction<string>>;
+  setSucDrop: Dispatch<SetStateAction<boolean>>;
+  sucDrop: boolean;
 }) {
   const [itemName, setItemName] = useState<string>(val);
 
   const handleDropLogic = (e: SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
     if (target) {
-      console.log("drop name:");
-      console.log(target.innerText);
-      setItemReplaced(target.innerText);
-      setItemName(itemDragged);
+      if (target.innerText === "") {
+        console.log("drop name:");
+        console.log(target.innerText);
+        setItemReplaced(target.innerText);
+        setItemName(itemDragged);
+        setSucDrop(true);
+      }
     }
   };
 
@@ -34,8 +41,12 @@ function ItemTile({
     }
   };
 
+  // handle resetting previous to null value
   const handleDragEnd = () => {
-    setItemName("");
+    if (sucDrop) {
+      setItemName("");
+      setSucDrop(false);
+    }
   };
 
   return (

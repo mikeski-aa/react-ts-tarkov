@@ -12,6 +12,7 @@ export interface IGridObject {
 function App() {
   const [itemDragged, setItemDragged] = useState<string>("");
   const [itemReplaced, setItemReplaced] = useState<string>("");
+  const [sucDrop, setSucDrop] = useState<boolean>(false);
 
   return (
     <div className="mainContent">
@@ -22,13 +23,17 @@ function App() {
           itemReplaced={itemReplaced}
           setItemDragged={setItemDragged}
           setItemReplaced={setItemReplaced}
+          setSucDrop={setSucDrop}
+          sucDrop={sucDrop}
         />
         <ItemTile
-          val="X"
+          val=""
           itemDragged={itemDragged}
           itemReplaced={itemReplaced}
           setItemDragged={setItemDragged}
           setItemReplaced={setItemReplaced}
+          setSucDrop={setSucDrop}
+          sucDrop={sucDrop}
         />
         <ItemTile
           val="Y"
@@ -36,6 +41,8 @@ function App() {
           itemReplaced={itemReplaced}
           setItemDragged={setItemDragged}
           setItemReplaced={setItemReplaced}
+          setSucDrop={setSucDrop}
+          sucDrop={sucDrop}
         />
       </div>
       <div className="gridBlocker">{/* <InventoryGrid /> */}</div>
