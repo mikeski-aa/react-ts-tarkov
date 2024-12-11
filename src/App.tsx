@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import "./App.css";
 import InventoryGrid from "./components/InventoryGrid";
+
+export interface IGridObject {
+  name: string;
+  width: number;
+  height: number;
+}
 
 function App() {
   const handleDropLogic = () => {
     alert("test");
   };
 
-  const handleDragStart = () => {};
+  const handleDragStart = (e: SyntheticEvent) => {
+    const target = e.target as HTMLInputElement;
+    if (target) {
+      console.log(target.innerText);
+    }
+  };
 
   return (
     <div className="mainContent">
@@ -16,7 +27,7 @@ function App() {
           className="dragboxtest"
           draggable
           onDrop={() => handleDropLogic()}
-          onDragStart={() => handleDragStart()}
+          onDragStart={(e) => handleDragStart(e)}
           onDragOver={(e) => e.preventDefault()}
         >
           X
@@ -25,7 +36,7 @@ function App() {
           className="dragboxtest"
           draggable
           onDrop={() => handleDropLogic()}
-          onDragStart={() => handleDragStart()}
+          onDragStart={(e) => handleDragStart(e)}
           onDragOver={(e) => e.preventDefault()}
         >
           Y
@@ -34,7 +45,7 @@ function App() {
           className="dragboxtest"
           draggable
           onDrop={() => handleDropLogic()}
-          onDragStart={() => handleDragStart()}
+          onDragStart={(e) => handleDragStart(e)}
           onDragOver={(e) => e.preventDefault()}
         >
           Y
