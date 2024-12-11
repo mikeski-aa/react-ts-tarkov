@@ -15,9 +15,27 @@ function App() {
   return (
     <div className="mainContent">
       <div className="tempBlocker">
-        <ItemTile val="X" />
-        <ItemTile val="X" />
-        <ItemTile val="Y" />
+        <ItemTile
+          val="X"
+          itemDragged={itemDragged}
+          itemReplaced={itemReplaced}
+          setItemDragged={setItemDragged}
+          setItemReplaced={setItemReplaced}
+        />
+        <ItemTile
+          val="X"
+          itemDragged={itemDragged}
+          itemReplaced={itemReplaced}
+          setItemDragged={setItemDragged}
+          setItemReplaced={setItemReplaced}
+        />
+        <ItemTile
+          val="Y"
+          itemDragged={itemDragged}
+          itemReplaced={itemReplaced}
+          setItemDragged={setItemDragged}
+          setItemReplaced={setItemReplaced}
+        />
       </div>
       <div className="gridBlocker">{/* <InventoryGrid /> */}</div>
     </div>
