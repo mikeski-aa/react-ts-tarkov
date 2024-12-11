@@ -31,8 +31,11 @@ function ItemTile({
       console.log("start drag name:");
       console.log(target.innerText);
       setItemDragged(target.innerText);
-      setItemName(itemReplaced);
     }
+  };
+
+  const handleDragEnd = () => {
+    setItemName("");
   };
 
   return (
@@ -42,6 +45,7 @@ function ItemTile({
       onDrop={(e) => handleDropLogic(e)}
       onDragStart={(e) => handleDragStart(e)}
       onDragOver={(e) => e.preventDefault()}
+      onDragEnd={() => handleDragEnd()}
     >
       {itemName}
     </div>

@@ -12,6 +12,7 @@ export interface IGridObject {
 function App() {
   const [itemDragged, setItemDragged] = useState<string>("");
   const [itemReplaced, setItemReplaced] = useState<string>("");
+
   return (
     <div className="mainContent">
       <div className="tempBlocker">
