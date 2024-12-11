@@ -8,6 +8,7 @@ function ItemTile({
   setItemReplaced,
   setSucDrop,
   sucDrop,
+  inputCoord,
 }: {
   val: string;
   itemDragged: string;
@@ -16,8 +17,10 @@ function ItemTile({
   setItemReplaced: Dispatch<SetStateAction<string>>;
   setSucDrop: Dispatch<SetStateAction<boolean>>;
   sucDrop: boolean;
+  inputCoord: number[];
 }) {
   const [itemName, setItemName] = useState<string>(val);
+  let coords = inputCoord;
 
   const handleDropLogic = (e: SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
@@ -51,7 +54,7 @@ function ItemTile({
 
   return (
     <div
-      className="dragboxtest"
+      className={`gridItem ${coords}`}
       draggable
       onDrop={(e) => handleDropLogic(e)}
       onDragStart={(e) => handleDragStart(e)}
