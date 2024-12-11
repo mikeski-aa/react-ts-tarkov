@@ -1,6 +1,6 @@
 import { SyntheticEvent, useState } from "react";
 
-function ItemTile() {
+function ItemTile({ val }: { val: string }) {
   const handleDropLogic = (e: SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
     if (target) {
@@ -17,7 +17,7 @@ function ItemTile() {
     }
   };
 
-  const [itemName, setItemName] = useState<string>("");
+  const [itemName, setItemName] = useState<string>(val);
 
   return (
     <div

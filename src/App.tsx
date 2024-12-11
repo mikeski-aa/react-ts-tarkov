@@ -1,6 +1,7 @@
 import { SyntheticEvent, useState } from "react";
 import "./App.css";
 import InventoryGrid from "./components/InventoryGrid";
+import ItemTile from "./components/ItemTile";
 
 export interface IGridObject {
   name: string;
@@ -13,7 +14,11 @@ function App() {
   const [itemReplaced, setItemReplaced] = useState<string>("");
   return (
     <div className="mainContent">
-      <div className="tempBlocker"></div>
+      <div className="tempBlocker">
+        <ItemTile val="X" />
+        <ItemTile val="X" />
+        <ItemTile val="Y" />
+      </div>
       <div className="gridBlocker">{/* <InventoryGrid /> */}</div>
     </div>
   );
