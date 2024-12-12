@@ -38,9 +38,11 @@ function ItemTile({
   const handleDragStart = (e: SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
     if (target) {
-      console.log("start drag name:");
-      console.log(target.innerText);
-      setItemDragged(target.innerText);
+      if (target.innerText != "") {
+        console.log("start drag name:");
+        console.log(target.innerText);
+        setItemDragged(target.innerText);
+      }
     }
   };
 

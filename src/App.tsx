@@ -17,7 +17,7 @@ function App() {
 
   const test: IBoxObject = {
     name: "gridItem",
-    item: "empty",
+    item: "",
     xindex: null,
     yindex: null,
   };
@@ -41,35 +41,7 @@ function App() {
 
   return (
     <div className="mainContent">
-      <div className="tempBlocker">
-        {/* <ItemTile
-          val="X"
-          itemDragged={itemDragged}
-          itemReplaced={itemReplaced}
-          setItemDragged={setItemDragged}
-          setItemReplaced={setItemReplaced}
-          setSucDrop={setSucDrop}
-          sucDrop={sucDrop}
-        />
-        <ItemTile
-          val=""
-          itemDragged={itemDragged}
-          itemReplaced={itemReplaced}
-          setItemDragged={setItemDragged}
-          setItemReplaced={setItemReplaced}
-          setSucDrop={setSucDrop}
-          sucDrop={sucDrop}
-        />
-        <ItemTile
-          val="Y"
-          itemDragged={itemDragged}
-          itemReplaced={itemReplaced}
-          setItemDragged={setItemDragged}
-          setItemReplaced={setItemReplaced}
-          setSucDrop={setSucDrop}
-          sucDrop={sucDrop}
-        /> */}
-      </div>
+      <div className="tempBlocker"></div>
       <div className="gridBlocker">
         <button onClick={() => handleAddItem()}>cccc</button>
         <div className="gridHolder" key={forceUpdateKey}>
