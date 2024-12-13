@@ -23,7 +23,7 @@ function FooterBar() {
           HIDEOUT
         </button>
         <div className="footerParty">
-          <button className="partyBtn">P</button>
+          <button className="partyBtn player">P</button>
           <button className="partyBtn">+</button>
           <button className="partyBtn">+</button>
           <button className="partyBtn">+</button>

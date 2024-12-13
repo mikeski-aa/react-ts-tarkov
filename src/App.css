@@ -54,4 +54,13 @@
 
 .headerContent {
   width: 100vw;
+  height: 15vh;
+}
+
+.tarkovFooter {
+  height: 5vh;
+}
+
+.tarkovUiHolder {
+  height: 100vh;
 }

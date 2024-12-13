@@ -1,4 +1,49 @@
 .footerIcon {
   width: 15px;
   height: 15px;
+  filter: invert(1);
+}
+
+.footerBtn {
+  background-color: #0d0e0e;
+  color: #c3c1b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+  outline: none;
+  height: 25px;
+}
+
+.partyBtn {
+  outline: none;
+  border: none;
+  color: #3c3b37;
+  background-color: #1b1c1b;
+  border: 1px solid #3a3935;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+}
+
+.partyBtn.player {
+  color: #909699;
+}
+
+.tarkovFooter {
+  display: flex;
+  justify-content: space-between;
+  max-height: 40px;
+  align-items: center;
+  background-color: black;
+}
+
+.leftFooterHolder,
+.rightFooterHolder,
+.footerParty {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
