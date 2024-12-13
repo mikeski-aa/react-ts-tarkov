@@ -59,6 +59,9 @@ function FooterBar() {
           <Survey className="footerIcon" />
           SURVEY
         </button>
+        <button className="footerBtn">
+          <Settings className="footerIcon" />
+        </button>
       </div>
     </div>
   );

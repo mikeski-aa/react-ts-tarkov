@@ -1,7 +1,12 @@
-.mainContent {
-  width: 100%;
-  height: 80vh;
-  display: flex;
+body {
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+}
+
+#root {
+  padding: 0px;
+  margin: 0px;
 }
 
 .tempBlocker {
@@ -54,13 +59,22 @@
 
 .headerContent {
   width: 100vw;
-  height: 15vh;
+  height: 20vh;
 }
 
 .tarkovFooter {
-  height: 5vh;
+  height: 3vh;
+  width: 100vw;
 }
 
 .tarkovUiHolder {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  background-color: blue;
+  width: 100%;
+  height: 100%;
 }
