@@ -49,7 +49,7 @@ function App() {
         <div className="tempBlocker"></div>
         <div className="gridBlocker">
           <button onClick={() => handleAddItem()}>cccc</button>
-          <div className="gridHolder" key={forceUpdateKey}>
+          {/* <div className="gridHolder" key={forceUpdateKey}>
             {gridArray.map((row, yIndex) => (
               <div className={`gridRow ${yIndex}`} key={yIndex}>
                 {row.map((item, xIndex) => (
@@ -67,7 +67,7 @@ function App() {
                 ))}
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
