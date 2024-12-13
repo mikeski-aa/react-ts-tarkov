@@ -3,6 +3,7 @@ import "./App.css";
 import InventoryGrid, { IBoxObject } from "./components/InventoryGrid";
 import ItemTile from "./components/ItemTile";
 import TradersDiv from "./components/TradersDiv";
+import FooterBar from "./components/FooterBar";
 
 export interface IGridObject {
   name: string;
@@ -70,6 +71,7 @@ function App() {
           </div> */}
         </div>
       </div>
+      <FooterBar />
     </div>
   );
 }
