@@ -1,0 +1,29 @@
+.tradersHolder {
+  display: flex;
+  gap: 5px;
+  width: fit-content;
+}
+
+.traderBox {
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  width: 90px;
+  height: fit-content;
+  padding: 5px;
+}
+
+.traderImageHolder {
+  background-color: green;
+  width: 90px;
+  height: 90px;
+  font-size: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.traderName,
+.traderRep,
+.traderReset {
+  text-align: center;
+}

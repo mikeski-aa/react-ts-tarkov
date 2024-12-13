@@ -2,6 +2,7 @@ import { SyntheticEvent, useState } from "react";
 import "./App.css";
 import InventoryGrid, { IBoxObject } from "./components/InventoryGrid";
 import ItemTile from "./components/ItemTile";
+import TradersDiv from "./components/TradersDiv";
 
 export interface IGridObject {
   name: string;
@@ -40,28 +41,33 @@ function App() {
   };
 
   return (
-    <div className="mainContent">
-      <div className="tempBlocker"></div>
-      <div className="gridBlocker">
-        <button onClick={() => handleAddItem()}>cccc</button>
-        <div className="gridHolder" key={forceUpdateKey}>
-          {gridArray.map((row, yIndex) => (
-            <div className={`gridRow ${yIndex}`} key={yIndex}>
-              {row.map((item, xIndex) => (
-                <ItemTile
-                  key={xIndex}
-                  val={item.item}
-                  itemDragged={itemDragged}
-                  itemReplaced={itemReplaced}
-                  setItemDragged={setItemDragged}
-                  setItemReplaced={setItemReplaced}
-                  setSucDrop={setSucDrop}
-                  sucDrop={sucDrop}
-                  inputCoord={[xIndex, yIndex]}
-                />
-              ))}
-            </div>
-          ))}
+    <div className="tarkovUiHolder">
+      <div className="headerContent">
+        <TradersDiv />
+      </div>
+      <div className="mainContent">
+        <div className="tempBlocker"></div>
+        <div className="gridBlocker">
+          <button onClick={() => handleAddItem()}>cccc</button>
+          <div className="gridHolder" key={forceUpdateKey}>
+            {gridArray.map((row, yIndex) => (
+              <div className={`gridRow ${yIndex}`} key={yIndex}>
+                {row.map((item, xIndex) => (
+                  <ItemTile
+                    key={xIndex}
+                    val={item.item}
+                    itemDragged={itemDragged}
+                    itemReplaced={itemReplaced}
+                    setItemDragged={setItemDragged}
+                    setItemReplaced={setItemReplaced}
+                    setSucDrop={setSucDrop}
+                    sucDrop={sucDrop}
+                    inputCoord={[xIndex, yIndex]}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
