@@ -35,3 +35,7 @@
   cursor: pointer;
   background-color: rgb(250, 250, 166);
 }
+
+.traderBox.active {
+  background-color: purple;
+}

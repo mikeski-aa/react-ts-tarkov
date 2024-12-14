@@ -1,28 +1,20 @@
-import { SyntheticEvent, useState } from "react";
+import { createContext, SyntheticEvent, useState } from "react";
 import "./App.css";
 import InventoryGrid, { IBoxObject } from "./components/InventoryGrid";
 import ItemTile from "./components/ItemTile";
 import TradersDiv from "./components/TradersDiv";
 import FooterBar from "./components/FooterBar";
+import { tradersData, Traders } from "./utils/traderData";
+import { IGlobalContext } from "./interfaces";
 
-export interface IGridObject {
-  name: string;
-  width: number;
-  height: number;
-}
+const defaultContextValue: IGlobalContext = {
+  traderSelect: Traders.Prapor,
+  setSelectTrader: () => Traders,
+};
+
+export const GlobalContext = createContext<IGlobalContext>(defaultContextValue);
 
 function App() {
-  enum Traders {
-    Prapor,
-    Therpist,
-    Skier,
-    Peacekeeper,
-    Mechanic,
-    Ragman,
-    Jaeger,
-    Ref,
-    Fence,
-  }
   const [itemDragged, setItemDragged] = useState<string>("");
   const [itemReplaced, setItemReplaced] = useState<string>("");
   const [sucDrop, setSucDrop] = useState<boolean>(false);
@@ -35,6 +27,7 @@ function App() {
     xindex: null,
     yindex: null,
   };
+
   const [gridArray, setGridArray] = useState(
     Array(28)
       .fill(null)
@@ -55,11 +48,12 @@ function App() {
 
   return (
     <div className="tarkovUiHolder">
-      <div className="headerContent">
-        <TradersDiv />
-      </div>
-      <div className="mainContent"></div>
-
+      <GlobalContext.Provider value={{ traderSelect, setSelectTrader }}>
+        <div className="headerContent">
+          <TradersDiv />
+        </div>
+        <div className="mainContent"></div>
+      </GlobalContext.Provider>
       <FooterBar />
     </div>
   );

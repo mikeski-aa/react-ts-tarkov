@@ -1,8 +1,24 @@
-import { ITraders } from "../utils/traderData";
+import { useContext } from "react";
+import { GlobalContext } from "../App";
+import { ITraders } from "../interfaces";
+import { Traders } from "../utils/traderData";
 
 function TraderTab({ trader }: { trader: ITraders }) {
+  const globalContext = useContext(GlobalContext);
+
+  const handleTraderClick = () => {
+    globalContext.setSelectTrader(trader.trader);
+  };
+
   return (
-    <button className="traderBox">
+    <button
+      className={
+        globalContext.traderSelect === trader.trader
+          ? "traderBox active"
+          : "traderBox"
+      }
+      onClick={handleTraderClick}
+    >
       <div className="traderImageHolder">
         <div className="repIcon">RI</div>
         <div className="notificHolder">
