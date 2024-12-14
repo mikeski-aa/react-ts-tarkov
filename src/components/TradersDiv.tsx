@@ -5,8 +5,8 @@ import TraderTab from "./TraderTab";
 function TradersDiv() {
   return (
     <div className="tradersHolder">
-      {tradersData.map((item) => (
-        <TraderTab trader={item} />
+      {tradersData.map((item, index) => (
+        <TraderTab trader={item} key={index} />
       ))}
     </div>
   );
