@@ -44,7 +44,7 @@ body {
 
 .gridItem {
   outline: 2px solid rgb(0, 0, 0);
-  box-sizing: border-box;
+
   width: 45px;
   height: 45px;
 }
