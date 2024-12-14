@@ -17,6 +17,8 @@ function InventoryDisplay() {
     );
 
     setLoadedItems(filtered[0].items);
+    setFilteredItems([]);
+    setInputText("");
   }, [globalContext.traderSelect]);
 
   const handleInputSearch = (e: SyntheticEvent) => {
@@ -40,6 +42,7 @@ function InventoryDisplay() {
           className="searchItems"
           placeholder="ITEM NAME"
           onChange={(e) => handleInputSearch(e)}
+          value={inputText}
         ></input>
       </div>
 
@@ -57,6 +60,7 @@ function InventoryDisplay() {
             {filteredItems.map((item, index) => (
               <li key={index}>{item.name}</li>
             ))}
+            {filteredItems.length === 0 ? <li>No items found</li> : null}
           </ul>
         </div>
       )}
