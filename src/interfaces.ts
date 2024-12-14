@@ -7,12 +7,19 @@ export interface IGridObject {
   height: number;
 }
 
+export interface ITraderItem {
+  name: string;
+  price: number;
+  quantity: number;
+}
+
 export interface ITraders {
   name: string;
   image: string;
   reputation: number;
   resetTimer: number;
   trader: Traders;
+  items: ITraderItem[];
 }
 
 export interface IGlobalContext {
