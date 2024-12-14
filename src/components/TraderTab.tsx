@@ -2,7 +2,7 @@ import { ITraders } from "../utils/traderData";
 
 function TraderTab({ trader }: { trader: ITraders }) {
   return (
-    <div className="traderBox">
+    <button className="traderBox">
       <div className="traderImageHolder">
         <div className="repIcon">RI</div>
         <div className="notificHolder">
@@ -13,7 +13,7 @@ function TraderTab({ trader }: { trader: ITraders }) {
       <div className="traderName">{trader.name}</div>
       <div className="traderRep">{trader.reputation}</div>
       <div className="traderReset">{trader.resetTimer}</div>
-    </div>
+    </button>
   );
 }
 

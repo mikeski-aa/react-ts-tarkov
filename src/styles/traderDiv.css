@@ -8,9 +8,12 @@
   background-color: yellow;
   display: flex;
   flex-direction: column;
-  width: 90px;
+  width: 100px;
   height: fit-content;
+  align-items: center;
   padding: 5px;
+  border: none;
+  outline: none;
 }
 
 .traderImageHolder {
@@ -26,4 +29,9 @@
 .traderRep,
 .traderReset {
   text-align: center;
+}
+
+.traderBox:hover {
+  cursor: pointer;
+  background-color: rgb(250, 250, 166);
 }

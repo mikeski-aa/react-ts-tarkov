@@ -12,10 +12,22 @@ export interface IGridObject {
 }
 
 function App() {
+  enum Traders {
+    Prapor,
+    Therpist,
+    Skier,
+    Peacekeeper,
+    Mechanic,
+    Ragman,
+    Jaeger,
+    Ref,
+    Fence,
+  }
   const [itemDragged, setItemDragged] = useState<string>("");
   const [itemReplaced, setItemReplaced] = useState<string>("");
   const [sucDrop, setSucDrop] = useState<boolean>(false);
   const [forceUpdateKey, setForceUpdateKey] = useState<number>(0);
+  const [traderSelect, setSelectTrader] = useState<Traders>(Traders.Prapor);
 
   const test: IBoxObject = {
     name: "gridItem",
