@@ -1,14 +1,17 @@
 import { SyntheticEvent, useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../App";
-import { ITraderItem, ITraders } from "../interfaces";
+import { ITraderItem } from "../interfaces";
 import { tradersData } from "../utils/traderData";
 import "../styles/inventoryDisplay.css";
+import BuyIcon from "../assets/icons/scBuy.svg?react";
+import SellIcon from "../assets/icons/scSell.svg?react";
 
 function InventoryDisplay() {
   const globalContext = useContext(GlobalContext);
   const [loadedItems, setLoadedItems] = useState<ITraderItem[]>([]);
   const [inputText, setInputText] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<ITraderItem[]>([]);
+  const [inventoryState, setInventoryState] = useState<boolean>(false);
 
   useEffect(() => {
     const shallowCopy = tradersData;
@@ -33,11 +36,31 @@ function InventoryDisplay() {
     console.log(target.value.toUpperCase().length);
   };
 
+  const handleBuyClick = () => {
+    setInventoryState(false);
+  };
+
+  const handleSellClick = () => {
+    setInventoryState(true);
+  };
+
   return (
     <div className="traderInventoryContainer">
       <div className="inventoryHeader">
-        <button className="inventoryBtn">BUY</button>
-        <button className="inventoryBtn">SELL</button>
+        <button
+          className={inventoryState ? "inventoryBtn" : "inventoryBtn active"}
+          onClick={handleBuyClick}
+        >
+          <BuyIcon className="footerIcon" />
+          BUY
+        </button>
+        <button
+          className={inventoryState ? "inventoryBtn active" : "inventoryBtn"}
+          onClick={handleSellClick}
+        >
+          <SellIcon className="footerIcon" />
+          SELL
+        </button>
         <input
           className="searchItems"
           placeholder="ITEM NAME"

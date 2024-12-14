@@ -70,6 +70,156 @@ const tradersData: ITraders[] = [
         price: 8000,
         quantity: 10,
       },
+      {
+        name: "PM Pistol Magazine",
+        price: 1000,
+        quantity: 50,
+      },
+      {
+        name: "Military Battery",
+        price: 120000,
+        quantity: 3,
+      },
+      {
+        name: "GP-25 Grenade Launcher",
+        price: 70000,
+        quantity: 7,
+      },
+      {
+        name: "AK-74 Polymer Handguard",
+        price: 12000,
+        quantity: 15,
+      },
+      {
+        name: "AK-12",
+        price: 55000,
+        quantity: 6,
+      },
+      {
+        name: "6B47 Helmet",
+        price: 20000,
+        quantity: 8,
+      },
+      {
+        name: "Grach Pistol",
+        price: 9000,
+        quantity: 20,
+      },
+      {
+        name: "5.45x39mm BP",
+        price: 300,
+        quantity: 1500,
+      },
+      {
+        name: "Zarya Flashbang",
+        price: 4000,
+        quantity: 25,
+      },
+      {
+        name: "AK-74 Buffer Tube",
+        price: 6000,
+        quantity: 30,
+      },
+      {
+        name: "Army Bandage",
+        price: 500,
+        quantity: 100,
+      },
+      {
+        name: "Zenit B-33 Dust Cover",
+        price: 13000,
+        quantity: 10,
+      },
+      {
+        name: "6Sh112 Vest",
+        price: 25000,
+        quantity: 7,
+      },
+      {
+        name: "TT-33 Tokarev",
+        price: 8000,
+        quantity: 10,
+      },
+      {
+        name: "AK-74 Zenit B-10 Handguard",
+        price: 9000,
+        quantity: 15,
+      },
+      {
+        name: "5.45x39mm T",
+        price: 200,
+        quantity: 2000,
+      },
+      {
+        name: "Kolpak-1S Headset",
+        price: 5000,
+        quantity: 12,
+      },
+      {
+        name: "AKS-74U",
+        price: 35000,
+        quantity: 7,
+      },
+      {
+        name: "AK-74 Gas Block",
+        price: 6000,
+        quantity: 10,
+      },
+      {
+        name: "5.45x39mm PP",
+        price: 250,
+        quantity: 1000,
+      },
+      {
+        name: "SPOSN Backpack",
+        price: 15000,
+        quantity: 10,
+      },
+      {
+        name: "VSS Vintorez",
+        price: 70000,
+        quantity: 4,
+      },
+      {
+        name: "AS VAL",
+        price: 75000,
+        quantity: 4,
+      },
+      {
+        name: "SV-98",
+        price: 60000,
+        quantity: 6,
+      },
+      {
+        name: "PSO-1 Scope",
+        price: 12000,
+        quantity: 15,
+      },
+      {
+        name: "AK-74 Muzzle Brake",
+        price: 4000,
+        quantity: 30,
+      },
+      {
+        name: "Saiga-12",
+        price: 30000,
+        quantity: 10,
+      },
+      {
+        name: "SPP Ammo",
+        price: 500,
+        quantity: 1500,
+      },
+      {
+        name: "AK-74 Picatinny Rail",
+        price: 8000,
+        quantity: 20,
+      },
+      {
+        name: "GPNVG-18 Night Vision",
+        price: 90000,
+        quantity: 5,
+      },
     ],
   },
   {

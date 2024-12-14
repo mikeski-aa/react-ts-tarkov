@@ -39,3 +39,25 @@
 .traderBox.active {
   background-color: purple;
 }
+
+.inventoryBtn {
+  background-color: #0d0e0e;
+  color: #c3c1b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  gap: 5px;
+  height: 20px;
+}
+
+.inventoryHeader {
+  display: flex;
+  gap: 5px;
+  background-color: black;
+  height: 30px;
+  align-items: center;
+  padding-left: 5px;
+  width: fit-content;
+}
