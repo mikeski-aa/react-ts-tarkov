@@ -14,7 +14,7 @@ function FooterBar() {
   return (
     <div className="tarkovFooter">
       <div className="leftFooterHolder">
-        <button className="footerBtn">
+        <button className="footerBtn first">
           <Mainmenu className="footerIcon" />
           MAIN MENU
         </button>
@@ -59,7 +59,7 @@ function FooterBar() {
           <Survey className="footerIcon" />
           SURVEY
         </button>
-        <button className="footerBtn">
+        <button className="footerBtn last">
           <Settings className="footerIcon" />
         </button>
       </div>

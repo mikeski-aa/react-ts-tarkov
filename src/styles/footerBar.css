@@ -56,3 +56,11 @@
   cursor: pointer;
   outline: 2px solid white;
 }
+
+.footerBtn.last {
+  margin-right: 5px;
+}
+
+.footerBtn.first {
+  margin-left: 5px;
+}

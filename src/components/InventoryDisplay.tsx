@@ -44,11 +44,19 @@ function InventoryDisplay() {
     setInventoryState(true);
   };
 
+  const [gridArray, setGridArray] = useState(
+    Array(28)
+      .fill(null)
+      .map((_, yIndex) => Array(10).fill(null))
+  );
+
   return (
     <div className="traderInventoryContainer">
       <div className="inventoryHeader">
         <button
-          className={inventoryState ? "inventoryBtn" : "inventoryBtn active"}
+          className={
+            inventoryState ? "inventoryBtn first" : "inventoryBtn active first"
+          }
           onClick={handleBuyClick}
         >
           <BuyIcon className="footerIcon" />
@@ -68,9 +76,22 @@ function InventoryDisplay() {
           value={inputText}
         ></input>
       </div>
-
-      {inputText.length < 1 ? (
+      {inventoryState ? (
+        <div className="playerInventory">
+          <h1>Player Inventory</h1>
+          <div className="testHolder">
+            {gridArray.map((row, yIndex) => (
+              <div className="gridRow" key={yIndex}>
+                {row.map((item) => (
+                  <div className="gridItem"></div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : inputText.length < 1 ? (
         <div className="inventoryMain">
+          <h1>Trader Inventory</h1>
           <ul>
             {loadedItems.map((item, index) => (
               <li key={index}>{item.name}</li>
