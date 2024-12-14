@@ -8,6 +8,7 @@ function InventoryDisplay() {
   const globalContext = useContext(GlobalContext);
   const [loadedItems, setLoadedItems] = useState<ITraderItem[]>([]);
   const [inputText, setInputText] = useState<string>("");
+  const [filteredItems, setFilteredItems] = useState<ITraderItem[]>([]);
 
   useEffect(() => {
     const shallowCopy = tradersData;
@@ -20,8 +21,14 @@ function InventoryDisplay() {
 
   const handleInputSearch = (e: SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
+    setInputText(target.value.toUpperCase());
 
-    console.log(target.value);
+    const filtered = loadedItems.filter((item) =>
+      item.name.toUpperCase().includes(target.value.toUpperCase())
+    );
+    setFilteredItems(filtered);
+
+    console.log(target.value.toUpperCase().length);
   };
 
   return (
@@ -35,13 +42,24 @@ function InventoryDisplay() {
           onChange={(e) => handleInputSearch(e)}
         ></input>
       </div>
-      <div className="inventoryMain">
-        <ul>
-          {loadedItems.map((item, index) => (
-            <li key={index}>{item.name}</li>
-          ))}
-        </ul>
-      </div>
+
+      {inputText.length < 1 ? (
+        <div className="inventoryMain">
+          <ul>
+            {loadedItems.map((item, index) => (
+              <li key={index}>{item.name}</li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <div className="inventoryMain">
+          <ul>
+            {filteredItems.map((item, index) => (
+              <li key={index}>{item.name}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
