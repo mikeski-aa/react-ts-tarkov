@@ -111,7 +111,7 @@
 
 .mouseOverBox {
   position: absolute;
-  transform: translateX(-50%);
+  transform: translateX(60px) translateY(-50%);
   width: 400px;
   height: 400px;
   background-color: black;

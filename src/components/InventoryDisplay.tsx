@@ -13,6 +13,7 @@ function InventoryDisplay() {
   const [inputText, setInputText] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<ITraderItem[]>([]);
   const [inventoryState, setInventoryState] = useState<boolean>(false);
+  const [flipBox, setFlipBox] = useState<boolean>(false);
 
   useEffect(() => {
     const shallowCopy = tradersData;
@@ -50,6 +51,17 @@ function InventoryDisplay() {
       .fill(null)
       .map((_, yIndex) => Array(10).fill(null))
   );
+
+  const handleMouseMove = (e: MouseEvent) => {
+    console.log(e.clientX, e.clientY);
+    console.log(window.innerWidth);
+
+    if (e.clientX + 450 > window.innerWidth) {
+      setFlipBox(true);
+    } else {
+      setFlipBox(false);
+    }
+  };
 
   return (
     <div className="traderInventoryContainer">
@@ -91,7 +103,7 @@ function InventoryDisplay() {
           </div>
         </div>
       ) : inputText.length < 1 ? (
-        <div className="inventoryMain">
+        <div className="inventoryMain" onMouseMove={(e) => handleMouseMove(e)}>
           <h1>Trader Inventory</h1>
           <div className="traderItemHolder">
             {loadedItems.map((item, index) => (
@@ -99,6 +111,7 @@ function InventoryDisplay() {
                 key={index}
                 item={item}
                 currency={globalContext.traderCurency}
+                flipBox={flipBox}
               />
             ))}
           </div>
@@ -112,6 +125,7 @@ function InventoryDisplay() {
                 key={index}
                 item={item}
                 currency={globalContext.traderCurency}
+                flipBox={flipBox}
               />
             ))}
           </div>
