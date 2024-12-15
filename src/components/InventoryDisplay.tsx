@@ -121,11 +121,10 @@ function InventoryDisplay() {
                   currency={globalContext.traderCurency}
                   flipBox={flipBox}
                   setActiveItem={setActiveItem}
-                  setBuyBox={setBuyBox}
                 />
               ))}
             </div>
-            <BuyBox buyBox={buyBox} item={activeItem} />
+            <BuyBox item={activeItem} />
           </div>
         </div>
       ) : (
@@ -140,11 +139,10 @@ function InventoryDisplay() {
                   currency={globalContext.traderCurency}
                   flipBox={flipBox}
                   setActiveItem={setActiveItem}
-                  setBuyBox={setBuyBox}
                 />
               ))}
             </div>
-            <BuyBox buyBox={buyBox} item={activeItem} />
+            <BuyBox item={activeItem} />
           </div>
           {filteredItems.length === 0 ? <div>No items found</div> : null}
         </div>

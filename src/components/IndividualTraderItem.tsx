@@ -1,22 +1,21 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useState } from "react";
 import { ITraderItem } from "../interfaces";
 import PlaceholderWeapon from "../assets/placeholders/weaponplaceholder.png";
+import { GlobalContext } from "../App";
 
 function IndividualTraderItem({
   item,
   currency,
   flipBox,
   setActiveItem,
-  setBuyBox,
 }: {
   item: ITraderItem;
   currency: string;
   flipBox: boolean;
   setActiveItem: Dispatch<SetStateAction<ITraderItem>>;
-  setBuyBox: Dispatch<SetStateAction<boolean>>;
 }) {
   const [mouseOverVisible, setMouseOverVisible] = useState<boolean>(false);
-
+  const globalContext = useContext(GlobalContext);
   const handleMouseEnter = () => {
     setMouseOverVisible(true);
   };
@@ -27,7 +26,7 @@ function IndividualTraderItem({
 
   const handleOnClick = () => {
     setActiveItem(item);
-    setBuyBox(true);
+    globalContext.setBuyBox(true);
   };
 
   return (

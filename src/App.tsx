@@ -13,6 +13,8 @@ const defaultContextValue: IGlobalContext = {
   setSelectTrader: () => Traders,
   traderCurency: "₽",
   setTraderCurrency: () => "",
+  buyBox: false,
+  setBuyBox: () => false,
 };
 
 export const GlobalContext = createContext<IGlobalContext>(defaultContextValue);
@@ -24,6 +26,7 @@ function App() {
   const [forceUpdateKey, setForceUpdateKey] = useState<number>(0);
   const [traderSelect, setSelectTrader] = useState<Traders>(Traders.Prapor);
   const [traderCurency, setTraderCurrency] = useState<string>("₽");
+  const [buyBox, setBuyBox] = useState<boolean>(false);
 
   const test: IBoxObject = {
     name: "gridItem",
@@ -58,6 +61,8 @@ function App() {
           setSelectTrader,
           traderCurency,
           setTraderCurrency,
+          buyBox,
+          setBuyBox,
         }}
       >
         <div className="headerContent">

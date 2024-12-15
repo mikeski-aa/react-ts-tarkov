@@ -85,6 +85,7 @@
   flex-wrap: wrap;
   width: 100%;
   gap: 3px;
+  height: fit-content;
 }
 
 .individualItem {
@@ -145,10 +146,12 @@
 
 .invBuyContainer {
   display: flex;
+  height: 100%;
 }
 
 .buyBox {
   transition-duration: 0.5s;
+  height: 600px;
 }
 
 .buyBox.hidden {

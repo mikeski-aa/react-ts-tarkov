@@ -27,4 +27,6 @@ export interface IGlobalContext {
   setSelectTrader: Dispatch<SetStateAction<Traders>>;
   traderCurency: string;
   setTraderCurrency: Dispatch<SetStateAction<string>>;
+  buyBox: boolean;
+  setBuyBox: Dispatch<SetStateAction<boolean>>;
 }

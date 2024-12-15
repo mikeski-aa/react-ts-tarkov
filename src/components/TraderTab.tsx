@@ -8,7 +8,7 @@ function TraderTab({ trader }: { trader: ITraders }) {
 
   const handleTraderClick = () => {
     globalContext.setSelectTrader(trader.trader);
-
+    globalContext.setBuyBox(false);
     if (trader.trader === Traders.Peacekeeper) {
       globalContext.setTraderCurrency("$");
     } else {
