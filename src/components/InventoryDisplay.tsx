@@ -5,6 +5,7 @@ import { tradersData } from "../utils/traderData";
 import "../styles/inventoryDisplay.css";
 import BuyIcon from "../assets/icons/scBuy.svg?react";
 import SellIcon from "../assets/icons/scSell.svg?react";
+import IndividualTraderItem from "./IndividualTraderItem";
 
 function InventoryDisplay() {
   const globalContext = useContext(GlobalContext);
@@ -92,20 +93,20 @@ function InventoryDisplay() {
       ) : inputText.length < 1 ? (
         <div className="inventoryMain">
           <h1>Trader Inventory</h1>
-          <ul>
+          <div className="traderItemHolder">
             {loadedItems.map((item, index) => (
-              <li key={index}>{item.name}</li>
+              <IndividualTraderItem key={index} item={item} />
             ))}
-          </ul>
+          </div>
         </div>
       ) : (
         <div className="inventoryMain">
-          <ul>
+          <div className="traderItemHolder">
             {filteredItems.map((item, index) => (
-              <li key={index}>{item.name}</li>
+              <IndividualTraderItem key={index} item={item} />
             ))}
-            {filteredItems.length === 0 ? <li>No items found</li> : null}
-          </ul>
+          </div>
+          {filteredItems.length === 0 ? <div>No items found</div> : null}
         </div>
       )}
     </div>

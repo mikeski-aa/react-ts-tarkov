@@ -78,3 +78,31 @@
   cursor: pointer;
   outline: 2px solid white;
 }
+
+.traderItemHolder {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 3px;
+}
+
+.individualItem {
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  height: 60px;
+  width: 60px;
+  font-size: 0.7rem;
+  justify-content: space-between;
+}
+
+.individualItemName {
+  max-width: 60px;
+  overflow-y: hidden;
+}
+
+.bottomPart {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
