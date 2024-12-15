@@ -25,4 +25,6 @@ export interface ITraders {
 export interface IGlobalContext {
   traderSelect: Traders;
   setSelectTrader: Dispatch<SetStateAction<Traders>>;
+  traderCurency: string;
+  setTraderCurrency: Dispatch<SetStateAction<string>>;
 }

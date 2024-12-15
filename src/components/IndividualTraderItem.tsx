@@ -11,7 +11,10 @@ function IndividualTraderItem({
     <div className="individualItem">
       <div className="individualItemName">{item.name}</div>
       <div className="bottomPart">
-        <div className="individualItemPrice">{item.price}</div>
+        <div className="individualItemPrice">
+          {currency}
+          {item.price}
+        </div>
         <div className="individualItemQuant">{item.quantity}</div>
       </div>
     </div>

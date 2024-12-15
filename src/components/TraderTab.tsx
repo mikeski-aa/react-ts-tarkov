@@ -8,6 +8,12 @@ function TraderTab({ trader }: { trader: ITraders }) {
 
   const handleTraderClick = () => {
     globalContext.setSelectTrader(trader.trader);
+
+    if (trader.trader === Traders.Peacekeeper) {
+      globalContext.setTraderCurrency("$");
+    } else {
+      globalContext.setTraderCurrency("₽");
+    }
   };
 
   return (

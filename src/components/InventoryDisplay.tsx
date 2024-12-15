@@ -95,7 +95,11 @@ function InventoryDisplay() {
           <h1>Trader Inventory</h1>
           <div className="traderItemHolder">
             {loadedItems.map((item, index) => (
-              <IndividualTraderItem key={index} item={item} />
+              <IndividualTraderItem
+                key={index}
+                item={item}
+                currency={globalContext.traderCurency}
+              />
             ))}
           </div>
         </div>
@@ -103,7 +107,11 @@ function InventoryDisplay() {
         <div className="inventoryMain">
           <div className="traderItemHolder">
             {filteredItems.map((item, index) => (
-              <IndividualTraderItem key={index} item={item} />
+              <IndividualTraderItem
+                key={index}
+                item={item}
+                currency={globalContext.traderCurency}
+              />
             ))}
           </div>
           {filteredItems.length === 0 ? <div>No items found</div> : null}

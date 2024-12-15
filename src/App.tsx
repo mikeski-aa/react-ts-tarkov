@@ -11,6 +11,8 @@ import InventoryDisplay from "./components/InventoryDisplay";
 const defaultContextValue: IGlobalContext = {
   traderSelect: Traders.Prapor,
   setSelectTrader: () => Traders,
+  traderCurency: "₽",
+  setTraderCurrency: () => "",
 };
 
 export const GlobalContext = createContext<IGlobalContext>(defaultContextValue);
@@ -21,6 +23,7 @@ function App() {
   const [sucDrop, setSucDrop] = useState<boolean>(false);
   const [forceUpdateKey, setForceUpdateKey] = useState<number>(0);
   const [traderSelect, setSelectTrader] = useState<Traders>(Traders.Prapor);
+  const [traderCurency, setTraderCurrency] = useState<string>("₽");
 
   const test: IBoxObject = {
     name: "gridItem",
@@ -49,7 +52,14 @@ function App() {
 
   return (
     <div className="tarkovUiHolder">
-      <GlobalContext.Provider value={{ traderSelect, setSelectTrader }}>
+      <GlobalContext.Provider
+        value={{
+          traderSelect,
+          setSelectTrader,
+          traderCurency,
+          setTraderCurrency,
+        }}
+      >
         <div className="headerContent">
           <TradersDiv />
         </div>
