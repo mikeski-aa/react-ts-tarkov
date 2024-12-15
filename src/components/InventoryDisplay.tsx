@@ -105,6 +105,7 @@ function InventoryDisplay() {
         </div>
       ) : (
         <div className="inventoryMain">
+          <h1>Trader Inventory</h1>
           <div className="traderItemHolder">
             {filteredItems.map((item, index) => (
               <IndividualTraderItem
