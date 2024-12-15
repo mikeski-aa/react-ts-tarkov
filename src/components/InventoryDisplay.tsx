@@ -1,4 +1,4 @@
-import { SyntheticEvent, useContext, useEffect, useState } from "react";
+import React, { SyntheticEvent, useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../App";
 import { ITraderItem } from "../interfaces";
 import { tradersData } from "../utils/traderData";
@@ -52,7 +52,7 @@ function InventoryDisplay() {
       .map((_, yIndex) => Array(10).fill(null))
   );
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = (e: React.MouseEvent) => {
     console.log(e.clientX, e.clientY);
     console.log(window.innerWidth);
 
