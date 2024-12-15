@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { ITraderItem } from "../interfaces";
 import PlaceholderWeapon from "../assets/placeholders/weaponplaceholder.png";
 
@@ -6,10 +6,12 @@ function IndividualTraderItem({
   item,
   currency,
   flipBox,
+  setActiveItem,
 }: {
   item: ITraderItem;
   currency: string;
   flipBox: boolean;
+  setActiveItem: Dispatch<SetStateAction<ITraderItem>>;
 }) {
   const [mouseOverVisible, setMouseOverVisible] = useState<boolean>(false);
 
@@ -20,11 +22,17 @@ function IndividualTraderItem({
   const handleMouseLeave = () => {
     setMouseOverVisible(false);
   };
+
+  const handleOnClick = () => {
+    setActiveItem(item);
+  };
+
   return (
     <div
       className="individualItem"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={handleOnClick}
     >
       {mouseOverVisible ? (
         <div className={flipBox ? "mouseOverBox flipped" : "mouseOverBox"}>

@@ -6,6 +6,7 @@ import "../styles/inventoryDisplay.css";
 import BuyIcon from "../assets/icons/scBuy.svg?react";
 import SellIcon from "../assets/icons/scSell.svg?react";
 import IndividualTraderItem from "./IndividualTraderItem";
+import BuyBox from "./BuyBox";
 
 function InventoryDisplay() {
   const globalContext = useContext(GlobalContext);
@@ -14,6 +15,12 @@ function InventoryDisplay() {
   const [filteredItems, setFilteredItems] = useState<ITraderItem[]>([]);
   const [inventoryState, setInventoryState] = useState<boolean>(false);
   const [flipBox, setFlipBox] = useState<boolean>(false);
+  const [activeItem, setActiveItem] = useState<ITraderItem>({
+    name: "xd",
+    price: 1,
+    quantity: 1,
+  });
+  const [buyBox, setBuyBoy] = useState<boolean>(false);
 
   useEffect(() => {
     const shallowCopy = tradersData;
@@ -119,15 +126,18 @@ function InventoryDisplay() {
       ) : (
         <div className="inventoryMain">
           <h1>Trader Inventory</h1>
-          <div className="traderItemHolder">
-            {filteredItems.map((item, index) => (
-              <IndividualTraderItem
-                key={index}
-                item={item}
-                currency={globalContext.traderCurency}
-                flipBox={flipBox}
-              />
-            ))}
+          <div className={buyBox ? "invBuyContainer open" : "invBuyContainer"}>
+            <div className="traderItemHolder">
+              {filteredItems.map((item, index) => (
+                <IndividualTraderItem
+                  key={index}
+                  item={item}
+                  currency={globalContext.traderCurency}
+                  flipBox={flipBox}
+                />
+              ))}
+            </div>
+            <BuyBox buyBox={buyBox} item={activeItem} />
           </div>
           {filteredItems.length === 0 ? <div>No items found</div> : null}
         </div>
