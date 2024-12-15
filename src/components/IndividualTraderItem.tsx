@@ -7,11 +7,13 @@ function IndividualTraderItem({
   currency,
   flipBox,
   setActiveItem,
+  setBuyBox,
 }: {
   item: ITraderItem;
   currency: string;
   flipBox: boolean;
   setActiveItem: Dispatch<SetStateAction<ITraderItem>>;
+  setBuyBox: Dispatch<SetStateAction<boolean>>;
 }) {
   const [mouseOverVisible, setMouseOverVisible] = useState<boolean>(false);
 
@@ -25,6 +27,7 @@ function IndividualTraderItem({
 
   const handleOnClick = () => {
     setActiveItem(item);
+    setBuyBox(true);
   };
 
   return (

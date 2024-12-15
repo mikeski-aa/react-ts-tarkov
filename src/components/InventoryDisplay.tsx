@@ -20,7 +20,7 @@ function InventoryDisplay() {
     price: 1,
     quantity: 1,
   });
-  const [buyBox, setBuyBoy] = useState<boolean>(false);
+  const [buyBox, setBuyBox] = useState<boolean>(false);
 
   useEffect(() => {
     const shallowCopy = tradersData;
@@ -112,21 +112,26 @@ function InventoryDisplay() {
       ) : inputText.length < 1 ? (
         <div className="inventoryMain" onMouseMove={(e) => handleMouseMove(e)}>
           <h1>Trader Inventory</h1>
-          <div className="traderItemHolder">
-            {loadedItems.map((item, index) => (
-              <IndividualTraderItem
-                key={index}
-                item={item}
-                currency={globalContext.traderCurency}
-                flipBox={flipBox}
-              />
-            ))}
+          <div className={"invBuyContainer"}>
+            <div className="traderItemHolder">
+              {loadedItems.map((item, index) => (
+                <IndividualTraderItem
+                  key={index}
+                  item={item}
+                  currency={globalContext.traderCurency}
+                  flipBox={flipBox}
+                  setActiveItem={setActiveItem}
+                  setBuyBox={setBuyBox}
+                />
+              ))}
+            </div>
+            <BuyBox buyBox={buyBox} item={activeItem} />
           </div>
         </div>
       ) : (
         <div className="inventoryMain">
           <h1>Trader Inventory</h1>
-          <div className={buyBox ? "invBuyContainer open" : "invBuyContainer"}>
+          <div className={"invBuyContainer"}>
             <div className="traderItemHolder">
               {filteredItems.map((item, index) => (
                 <IndividualTraderItem
@@ -134,6 +139,8 @@ function InventoryDisplay() {
                   item={item}
                   currency={globalContext.traderCurency}
                   flipBox={flipBox}
+                  setActiveItem={setActiveItem}
+                  setBuyBox={setBuyBox}
                 />
               ))}
             </div>
