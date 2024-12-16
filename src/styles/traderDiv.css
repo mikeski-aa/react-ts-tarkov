@@ -152,6 +152,9 @@
 .buyBox {
   transition-duration: 0.5s;
   height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buyBox.hidden {
@@ -167,7 +170,7 @@
 
 .buyBox.open {
   opacity: 1;
-  max-width: 180px;
+  min-width: 180px;
 
   overflow: hidden;
   background-color: rgb(255, 255, 255);
@@ -177,4 +180,28 @@
 
 .buyBox.open > * {
   overflow: hidden;
+}
+
+.bbHeader {
+  font-size: 2rem;
+}
+
+.bbItemName {
+  margin-bottom: 25px;
+}
+
+.bbInput,
+.bbLabel {
+  text-align: center;
+}
+
+.bbInputHolder {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+}
+
+.bbInput::-webkit-outer-spin-button,
+.bbInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
