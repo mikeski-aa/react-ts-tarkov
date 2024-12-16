@@ -17,9 +17,13 @@ function PlayerInfo() {
           <div className="ppUsd">$ 781</div>
           <div className="ppEur">€ 223</div>
         </div>
+        <hr className="ppHr"></hr>
         <div className="ppCurrentTrader">
           <div className="currentStanding">
-            <div className="currentLevel">Trader level: I</div>
+            <div className="currentLevel">
+              <span className="textSpan">Trader level:</span>
+              <span className="levelSpan">I</span>
+            </div>
             <div className="currentRep">
               <RepIcon className="profileIcon" /> 0.78
             </div>
@@ -29,7 +33,10 @@ function PlayerInfo() {
             </div>
           </div>
           <div className="nextStanding">
-            <div className="nextLevel">Trader level: II</div>
+            <div className="nextLevel">
+              <span className="textSpan">Next level:</span>
+              <span className="levelSpan">II</span>
+            </div>
             <div className="nextRep">
               <RepIcon className="profileIcon" /> 1.00
             </div>
