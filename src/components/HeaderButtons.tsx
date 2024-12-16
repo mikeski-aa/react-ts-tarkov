@@ -11,10 +11,12 @@ function HeaderButtons() {
 
   const handleTradingClick = () => {
     globalContext.setMainDisplay(WindowState.Trading);
+    console.log(globalContext.mainDisplay === WindowState.Trading);
   };
 
   const handleTasksClick = () => {
     globalContext.setMainDisplay(WindowState.Tasks);
+    console.log(globalContext.mainDisplay);
   };
   const handleServicesClick = () => {
     globalContext.setMainDisplay(WindowState.Services);
@@ -25,7 +27,7 @@ function HeaderButtons() {
       <div className="headerButtonHolder">
         <button
           className={
-            globalContext.mainDisplay == WindowState.Trading
+            globalContext.mainDisplay === 0
               ? "headerButtons selected"
               : "headerButtons"
           }
@@ -34,11 +36,25 @@ function HeaderButtons() {
           <Buy className="headerBtnIcon" />
           Trading
         </button>
-        <button className="headerButtons" onClick={handleTasksClick}>
+        <button
+          className={
+            globalContext.mainDisplay === 1
+              ? "headerButtons selected"
+              : "headerButtons"
+          }
+          onClick={handleTasksClick}
+        >
           <Tasks className="headerBtnIcon" />
           Tasks
         </button>
-        <button className="headerButtons" onClick={handleServicesClick}>
+        <button
+          className={
+            globalContext.mainDisplay === 2
+              ? "headerButtons selected"
+              : "headerButtons"
+          }
+          onClick={handleServicesClick}
+        >
           <HandShake className="headerBtnIcon" />
           Services
         </button>
@@ -48,11 +64,25 @@ function HeaderButtons() {
 
   return (
     <div className="headerButtonHolder">
-      <button className="headerButtons" onClick={handleTradingClick}>
+      <button
+        className={
+          globalContext.mainDisplay === 0
+            ? "headerButtons selected"
+            : "headerButtons"
+        }
+        onClick={handleTradingClick}
+      >
         <Buy className="headerBtnIcon" />
         Trading
       </button>
-      <button className="headerButtons">
+      <button
+        className={
+          globalContext.mainDisplay === 1
+            ? "headerButtons selected"
+            : "headerButtons"
+        }
+        onClick={handleTasksClick}
+      >
         <Tasks className="headerBtnIcon" />
         Tasks
       </button>

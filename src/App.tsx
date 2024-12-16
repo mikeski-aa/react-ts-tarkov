@@ -31,7 +31,9 @@ function App() {
   const [traderSelect, setSelectTrader] = useState<Traders>(Traders.Prapor);
   const [traderCurency, setTraderCurrency] = useState<string>("₽");
   const [buyBox, setBuyBox] = useState<boolean>(false);
-  const [mainDisplay, setMainDisplay] = useState<WindowState>(0);
+  const [mainDisplay, setMainDisplay] = useState<WindowState>(
+    WindowState.Trading
+  );
 
   const test: IBoxObject = {
     name: "gridItem",
@@ -80,7 +82,13 @@ function App() {
           </div>
         </div>
         <div className="mainContent">
-          <InventoryDisplay />
+          {mainDisplay === 0 ? (
+            <InventoryDisplay />
+          ) : mainDisplay === 1 ? (
+            <h1>Tasks</h1>
+          ) : (
+            <h1>Services</h1>
+          )}
         </div>
       </GlobalContext.Provider>
       <FooterBar />
