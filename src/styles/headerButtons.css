@@ -1,0 +1,50 @@
+.headerButtons {
+  clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
+  font-weight: bold;
+  background-color: #3a3a3ad2;
+  color: #c3c1b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  gap: 2px;
+  padding: 5px;
+  padding-right: 10px;
+  font-size: 1rem;
+  height: 30px;
+  width: 120px;
+  border-radius: 5px;
+}
+
+.headerButtonHolder {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.headerBtnIcon {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+.headerButtons:hover {
+  cursor: pointer;
+  color: black;
+  background-color: rgb(201, 201, 201);
+}
+
+.headerButtons:hover > .headerBtnIcon {
+  filter: invert(0);
+}
+
+.headerButtons.selected {
+  color: black;
+  background-color: rgb(201, 201, 201);
+}
+
+.headerButtons.selected > .headerBtnIcon {
+  filter: invert(0);
+}

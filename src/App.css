@@ -61,10 +61,12 @@ h1 {
   overflow-y: scroll;
 }
 
-.headerContent {
+.headerContentInner {
   width: 100vw;
   display: flex;
   justify-content: space-between;
+  border-top: 3px solid #cfcbb5;
+  border-bottom: 3px solid #cfcbb5;
 }
 
 .tarkovFooter {

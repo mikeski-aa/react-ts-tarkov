@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Traders } from "./utils/traderData";
+import { Traders, WindowState } from "./utils/traderData";
 
 export interface IGridObject {
   name: string;
@@ -29,4 +29,6 @@ export interface IGlobalContext {
   setTraderCurrency: Dispatch<SetStateAction<string>>;
   buyBox: boolean;
   setBuyBox: Dispatch<SetStateAction<boolean>>;
+  mainDisplay: WindowState;
+  setMainDisplay: Dispatch<SetStateAction<WindowState>>;
 }

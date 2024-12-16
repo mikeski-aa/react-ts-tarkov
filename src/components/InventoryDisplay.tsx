@@ -60,9 +60,6 @@ function InventoryDisplay() {
   );
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    console.log(e.clientX, e.clientY);
-    console.log(window.innerWidth);
-
     if (e.clientX + 450 > window.innerWidth) {
       setFlipBox(true);
     } else {

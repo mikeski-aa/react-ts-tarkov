@@ -4,10 +4,11 @@ import InventoryGrid, { IBoxObject } from "./components/InventoryGrid";
 import ItemTile from "./components/ItemTile";
 import TradersDiv from "./components/TradersDiv";
 import FooterBar from "./components/FooterBar";
-import { tradersData, Traders } from "./utils/traderData";
+import { tradersData, Traders, WindowState } from "./utils/traderData";
 import { IGlobalContext } from "./interfaces";
 import InventoryDisplay from "./components/InventoryDisplay";
 import PlayerInfo from "./components/PlayerInfo";
+import HeaderButtons from "./components/HeaderButtons";
 
 const defaultContextValue: IGlobalContext = {
   traderSelect: Traders.Prapor,
@@ -16,6 +17,8 @@ const defaultContextValue: IGlobalContext = {
   setTraderCurrency: () => "",
   buyBox: false,
   setBuyBox: () => false,
+  mainDisplay: WindowState.Trading,
+  setMainDisplay: () => WindowState,
 };
 
 export const GlobalContext = createContext<IGlobalContext>(defaultContextValue);
@@ -28,6 +31,7 @@ function App() {
   const [traderSelect, setSelectTrader] = useState<Traders>(Traders.Prapor);
   const [traderCurency, setTraderCurrency] = useState<string>("₽");
   const [buyBox, setBuyBox] = useState<boolean>(false);
+  const [mainDisplay, setMainDisplay] = useState<WindowState>(0);
 
   const test: IBoxObject = {
     name: "gridItem",
@@ -64,11 +68,16 @@ function App() {
           setTraderCurrency,
           buyBox,
           setBuyBox,
+          mainDisplay,
+          setMainDisplay,
         }}
       >
         <div className="headerContent">
-          <TradersDiv />
-          <PlayerInfo />
+          <HeaderButtons />
+          <div className="headerContentInner">
+            <TradersDiv />
+            <PlayerInfo />
+          </div>
         </div>
         <div className="mainContent">
           <InventoryDisplay />
