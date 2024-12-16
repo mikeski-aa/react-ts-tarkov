@@ -1,11 +1,4 @@
-import {
-  Dispatch,
-  SetStateAction,
-  SyntheticEvent,
-  useCallback,
-  useContext,
-  useState,
-} from "react";
+import { SyntheticEvent, useContext, useState } from "react";
 import { ITraderItem } from "../interfaces";
 import { GlobalContext } from "../App";
 
@@ -27,29 +20,31 @@ function BuyBox({ item }: { item: ITraderItem }) {
   };
   return (
     <div className={globalContext.buyBox ? "buyBox open" : "buyBox hidden"}>
-      <div className="bbHeader">Purchase</div>
-      <div className="bbItemName">{item.name}</div>
-      <div className="bbPrice">
-        {globalContext.traderCurency}
-        {item.price * purchaseQuant}
+      <div className="bbUpperHolder">
+        <div className="bbHeader">Purchase</div>
+        <div className="bbItemName">{item.name}</div>
+        <div className="bbImageHolder"></div>
+        <div className="bbPrice">
+          {globalContext.traderCurency}
+          {item.price * purchaseQuant}
+        </div>
+        <div className="bbInputHolder">
+          <label htmlFor="bbInput" className="bbLabel">
+            Quantity
+          </label>
+          <input
+            className="bbInput"
+            type="number"
+            onChange={(e) => handleInputChange(e)}
+            value={purchaseQuant}
+          ></input>
+        </div>
       </div>
-      <div className="bbInputHolder">
-        <label htmlFor="bbInput" className="bbLabel">
-          Quantity
-        </label>
-        <input
-          className="bbInput"
-          type="number"
-          onChange={(e) => handleInputChange(e)}
-          value={purchaseQuant}
-        ></input>
-      </div>
-
       <div className="bbButonHolder">
-        <button className="bbButton" onClick={handleCloseClick}>
+        <button className="bbButtonConfirm" onClick={handleCloseClick}>
           Confirm
         </button>
-        <button className="bbButton" onClick={handleCloseClick}>
+        <button className="bbButtonCancel" onClick={handleCloseClick}>
           Close
         </button>
       </div>

@@ -155,6 +155,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .buyBox.hidden {
@@ -171,7 +172,6 @@
 .buyBox.open {
   opacity: 1;
   min-width: 180px;
-
   overflow: hidden;
   background-color: rgb(255, 255, 255);
   padding: 5px;
@@ -195,6 +195,10 @@
   text-align: center;
 }
 
+.bbPrice {
+  text-align: center;
+}
+
 .bbInputHolder {
   display: flex;
   flex-direction: column;
@@ -204,4 +208,21 @@
 .bbInput::-webkit-outer-spin-button,
 .bbInput::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+.bbButonHolder {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 0%;
+  align-items: center;
+}
+
+.bbButtonConfirm {
+  width: 120px;
+  margin-bottom: 5px;
+}
+
+.bbButtonCancel {
+  width: 100px;
 }
