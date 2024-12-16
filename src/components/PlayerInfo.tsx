@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../App";
 import { Traders } from "../utils/traderData";
 import ProfilePlaceholder from "../assets/placeholders/profileplaceholder.svg?react";
+import "../styles/playerInfo.css";
 
 function PlayerInfo() {
   const globalContext = useContext(GlobalContext);
@@ -24,7 +25,7 @@ function PlayerInfo() {
           <div className="nextStanding">
             <div className="nextLevel">Trader level: II</div>
             <div className="nextRep">RepIcon: 1.00</div>
-            <div className="nextSpent">{"₽ 1000.3k"}</div>
+            <div className="nextSpent">{"₽ 1000.3k (required)"}</div>
           </div>
         </div>
       </div>

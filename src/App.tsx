@@ -7,6 +7,7 @@ import FooterBar from "./components/FooterBar";
 import { tradersData, Traders } from "./utils/traderData";
 import { IGlobalContext } from "./interfaces";
 import InventoryDisplay from "./components/InventoryDisplay";
+import PlayerInfo from "./components/PlayerInfo";
 
 const defaultContextValue: IGlobalContext = {
   traderSelect: Traders.Prapor,
@@ -67,6 +68,7 @@ function App() {
       >
         <div className="headerContent">
           <TradersDiv />
+          <PlayerInfo />
         </div>
         <div className="mainContent">
           <InventoryDisplay />

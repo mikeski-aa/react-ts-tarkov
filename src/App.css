@@ -63,6 +63,8 @@ h1 {
 
 .headerContent {
   width: 100vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tarkovFooter {
