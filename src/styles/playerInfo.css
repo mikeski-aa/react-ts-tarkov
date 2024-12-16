@@ -22,7 +22,6 @@
   display: flex;
   gap: 5px;
   justify-content: space-between;
-  width: 70%;
 }
 
 .ppName {
@@ -45,4 +44,29 @@
 .nextStanding {
   display: flex;
   gap: 10px;
+}
+
+.profileIcon {
+  width: 15px;
+  height: 15px;
+  filter: invert(1);
+}
+
+.currentRep,
+.nextRep {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 50px;
+}
+.currentLevel,
+.nextLevel {
+  width: 100px;
+}
+
+.currentSpent,
+.nextSpent {
+  width: 145px;
+  display: flex;
+  justify-content: space-between;
 }

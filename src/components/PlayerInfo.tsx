@@ -3,6 +3,7 @@ import { GlobalContext } from "../App";
 import { Traders } from "../utils/traderData";
 import ProfilePlaceholder from "../assets/placeholders/profileplaceholder.svg?react";
 import "../styles/playerInfo.css";
+import RepIcon from "../assets/icons/repicon.svg?react";
 
 function PlayerInfo() {
   const globalContext = useContext(GlobalContext);
@@ -19,13 +20,23 @@ function PlayerInfo() {
         <div className="ppCurrentTrader">
           <div className="currentStanding">
             <div className="currentLevel">Trader level: I</div>
-            <div className="currentRep">RepIcon: 0.78</div>
-            <div className="currentSpent">{"₽ 715.3k (spent)"}</div>
+            <div className="currentRep">
+              <RepIcon className="profileIcon" /> 0.78
+            </div>
+            <div className="currentSpent">
+              <span>₽ 715.3k</span>
+              <span>{"(spent)"}</span>
+            </div>
           </div>
           <div className="nextStanding">
             <div className="nextLevel">Trader level: II</div>
-            <div className="nextRep">RepIcon: 1.00</div>
-            <div className="nextSpent">{"₽ 1000.3k (required)"}</div>
+            <div className="nextRep">
+              <RepIcon className="profileIcon" /> 1.00
+            </div>
+            <div className="nextSpent">
+              <span>₽ 1000.3k</span>
+              <span>{"(required)"}</span>
+            </div>
           </div>
         </div>
       </div>
