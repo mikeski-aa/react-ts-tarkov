@@ -1,6 +1,7 @@
 import { SyntheticEvent, useContext, useState } from "react";
 import { ITraderItem } from "../interfaces";
 import { GlobalContext } from "../App";
+import WeaponPlaceholder from "../assets/placeholders/weaponplaceholder.png";
 
 function BuyBox({ item }: { item: ITraderItem }) {
   const globalContext = useContext(GlobalContext);
@@ -23,7 +24,9 @@ function BuyBox({ item }: { item: ITraderItem }) {
       <div className="bbUpperHolder">
         <div className="bbHeader">Purchase</div>
         <div className="bbItemName">{item.name}</div>
-        <div className="bbImageHolder"></div>
+        <div className="bbImageHolder">
+          <img src={WeaponPlaceholder} className="bbImage"></img>
+        </div>
         <div className="bbPrice">
           {globalContext.traderCurency}
           {item.price * purchaseQuant}

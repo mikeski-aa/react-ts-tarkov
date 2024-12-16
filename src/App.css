@@ -2,8 +2,12 @@ body {
   padding: 0px;
   margin: 0px;
   height: 100vh;
+  background-image: url("../src/assets/placeholders/backgroundtarkov.png");
+  background-size: cover;
 }
-
+h1 {
+  color: white;
+}
 #root {
   padding: 0px;
   margin: 0px;
@@ -20,7 +24,7 @@ body {
 .gridBlocker {
   height: 100%;
   width: 34%;
-  background-color: grey;
+  background-color: rgba(128, 128, 128, 0.534);
 }
 
 .dragboxtest {
@@ -43,7 +47,7 @@ body {
 }
 
 .gridItem {
-  outline: 2px solid rgb(0, 0, 0);
+  outline: 2px solid rgb(170, 170, 170);
 
   width: 45px;
   height: 45px;
@@ -74,7 +78,7 @@ body {
 }
 
 .mainContent {
-  background-color: rgb(88, 88, 241);
+  background-color: rgba(88, 88, 241, 0);
   width: 100%;
   height: 100%;
 }
