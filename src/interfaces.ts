@@ -32,3 +32,22 @@ export interface IGlobalContext {
   mainDisplay: WindowState;
   setMainDisplay: Dispatch<SetStateAction<WindowState>>;
 }
+
+export interface IQuestRewardItem {
+  name: string;
+}
+
+export interface ICurrReward {
+  name: string;
+  amount: number;
+}
+
+export interface IQuest {
+  name: string;
+  trader: Traders;
+  completed: boolean;
+  repReward: number;
+  expReward: number;
+  items: string[];
+  currencyReward: ICurrReward;
+}
