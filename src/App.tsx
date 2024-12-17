@@ -9,6 +9,7 @@ import { IGlobalContext } from "./interfaces";
 import InventoryDisplay from "./components/InventoryDisplay";
 import PlayerInfo from "./components/PlayerInfo";
 import HeaderButtons from "./components/HeaderButtons";
+import TaskWindow from "./components/TaskWindow";
 
 const defaultContextValue: IGlobalContext = {
   traderSelect: Traders.Prapor,
@@ -85,7 +86,7 @@ function App() {
           {mainDisplay === 0 ? (
             <InventoryDisplay />
           ) : mainDisplay === 1 ? (
-            <h1>Tasks</h1>
+            <TaskWindow />
           ) : (
             <h1>Services</h1>
           )}

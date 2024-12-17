@@ -2,7 +2,7 @@ import { ITraders } from "../interfaces";
 
 enum Traders {
   Prapor,
-  Therpist,
+  Therapist,
   Skier,
   Peacekeeper,
   Mechanic,
@@ -233,7 +233,7 @@ const tradersData: ITraders[] = [
     image: "therapist.webp",
     reputation: 0.5,
     resetTimer: 60000,
-    trader: Traders.Therpist,
+    trader: Traders.Therapist,
     items: [
       {
         name: "Salewa First Aid Kit",
