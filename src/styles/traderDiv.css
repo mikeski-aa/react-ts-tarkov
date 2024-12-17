@@ -25,8 +25,37 @@
   font-size: 0.5rem;
   display: flex;
   justify-content: space-between;
-  background-image: url("../assets/placeholders/traderplaceholder.png");
-  filter: invert(1);
+  color: white;
+  background-size: cover;
+}
+
+.traderImageHolder.Prapor {
+  background-image: url("../assets/traderProfiles/Prapor_Portrait.webp");
+}
+
+.traderImageHolder.Therapist {
+  background-image: url("../assets/traderProfiles/Therapist_Portrait.webp");
+}
+.traderImageHolder.Skier {
+  background-image: url("../assets/traderProfiles/Skier_Portrait.webp");
+}
+.traderImageHolder.Peacekeeper {
+  background-image: url("../assets/traderProfiles/Peacekeeper_Portrait.webp");
+}
+.traderImageHolder.Mechanic {
+  background-image: url("../assets/traderProfiles/Mechanic_Portrait.webp");
+}
+.traderImageHolder.Ragman {
+  background-image: url("../assets/traderProfiles/Ragman_Portrait.webp");
+}
+.traderImageHolder.Jaeger {
+  background-image: url("../assets/traderProfiles/Jaeger_Portrait.webp");
+}
+.traderImageHolder.Ref {
+  background-image: url("../assets/traderProfiles/Ref_Portrait.webp");
+}
+.traderImageHolder.Fence {
+  background-image: url("../assets/traderProfiles/Fence_Portrait.webp");
 }
 
 .traderName,

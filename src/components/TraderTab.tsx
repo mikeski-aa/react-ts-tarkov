@@ -33,7 +33,7 @@ function TraderTab({ trader }: { trader: ITraders }) {
       }
       onClick={handleTraderClick}
     >
-      <div className="traderImageHolder">
+      <div className={`traderImageHolder ${trader.name}`}>
         <div className="repIcon">RI</div>
         <div className="notificHolder">
           <div className="dailyNotification">Daily</div>

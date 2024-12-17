@@ -3,11 +3,15 @@ import { IQuest } from "../interfaces";
 import { GlobalContext } from "../App";
 import { Traders } from "../utils/traderData";
 import {
+  mechanicQuests,
   peacekeeperQuests,
   praporQuests,
   ragmanQuests,
   skierQuests,
   therapistQuests,
+  jaegerQuests,
+  refQuests,
+  fenceQuests,
 } from "../utils/questData";
 import "../styles/taskWindow.css";
 import palceholderQuestImg from "../assets/placeholders/questimageplaceholder.png";
@@ -40,8 +44,33 @@ function TaskWindow() {
         setCurrentQuests(skierQuests);
         setActiveQuest(skierQuests[0]);
         break;
+      case Traders.Mechanic:
+        setCurrentQuests(mechanicQuests);
+        setActiveQuest(mechanicQuests[0]);
+        break;
+      case Traders.Jaeger:
+        setCurrentQuests(jaegerQuests);
+        setActiveQuest(jaegerQuests[0]);
+        break;
+      case Traders.Ref:
+        setCurrentQuests(refQuests);
+        setActiveQuest(refQuests[0]);
+        break;
+      case Traders.Fence:
+        setCurrentQuests(fenceQuests);
+        setActiveQuest(fenceQuests[0]);
+        break;
     }
   }, [globalContext.traderSelect]);
+
+  const handleQuestClick = (questName: string) => {
+    const filteredQuests = currentQuests.filter(
+      (item) => item.name === questName
+    );
+    if (filteredQuests) {
+      setActiveQuest(filteredQuests[0]);
+    }
+  };
 
   return (
     <div className="taskHolder">
@@ -52,7 +81,12 @@ function TaskWindow() {
       <div className="mainTaskWindow">
         <div className="leftMainList">
           {currentQuests.map((quest) => (
-            <button>{quest.name}</button>
+            <button
+              className="questButton"
+              onClick={() => handleQuestClick(quest.name)}
+            >
+              {quest.name}
+            </button>
           ))}
         </div>
         <div className="rightMainQuest">
