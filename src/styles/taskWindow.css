@@ -34,4 +34,32 @@
 .rightMainQuest {
   width: 70%;
   background-color: yellow;
+  display: flex;
+  flex-direction: column;
+}
+
+.questDetails {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  align-items: center;
+}
+
+.questImg {
+  width: 300px;
+  height: 200px;
+}
+
+.questObj {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.taskItem {
+  padding: 5px;
+  width: 400px;
+  background-color: grey;
+  text-align: center;
 }

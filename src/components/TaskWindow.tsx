@@ -10,6 +10,7 @@ import {
   therapistQuests,
 } from "../utils/questData";
 import "../styles/taskWindow.css";
+import palceholderQuestImg from "../assets/placeholders/questimageplaceholder.png";
 
 function TaskWindow() {
   const [currentQuests, setCurrentQuests] = useState<IQuest[]>([]);
@@ -50,10 +51,32 @@ function TaskWindow() {
       <div className="mainTaskWindow">
         <div className="leftMainList">
           {currentQuests.map((quest) => (
-            <div>{quest.name}</div>
+            <button>{quest.name}</button>
           ))}
         </div>
-        <div className="rightMainQuest"></div>
+        <div className="rightMainQuest">
+          <div className="questDetails">
+            <img src={palceholderQuestImg} className="questImg"></img>
+            <div className="detailsText">{activeQuest?.description}</div>
+          </div>
+          <div className="questObj">
+            {activeQuest?.subTask.map((sub) => (
+              <div className="taskItem">{sub.text}</div>
+            ))}
+          </div>
+          <div className="questRewards">
+            <div className="expReward">+ {activeQuest?.expReward} EXP</div>
+            <div className="cashReward">
+              {activeQuest?.currencyReward.name}{" "}
+              {activeQuest?.currencyReward.amount}
+            </div>
+            {activeQuest?.items
+              ? activeQuest.items.map((reward) => (
+                  <div className="itemReward">{reward}</div>
+                ))
+              : null}
+          </div>
+        </div>
       </div>
     </div>
   );
