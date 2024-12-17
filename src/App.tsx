@@ -98,29 +98,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <div className="tempBlocker"></div>
-        <div className="gridBlocker">
-          <button onClick={() => handleAddItem()}>cccc</button>
-          <div className="gridHolder" key={forceUpdateKey}>
-            {gridArray.map((row, yIndex) => (
-              <div className={`gridRow ${yIndex}`} key={yIndex}>
-                {row.map((item, xIndex) => (
-                  <ItemTile
-                    key={xIndex}
-                    val={item.item}
-                    itemDragged={itemDragged}
-                    itemReplaced={itemReplaced}
-                    setItemDragged={setItemDragged}
-                    setItemReplaced={setItemReplaced}
-                    setSucDrop={setSucDrop}
-                    sucDrop={sucDrop}
-                    inputCoord={[xIndex, yIndex]}
-                  />
-                ))}
-              </div>
-            ))}
-          </div>
-        </div> */
-}

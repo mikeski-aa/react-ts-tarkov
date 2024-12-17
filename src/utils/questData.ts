@@ -87,6 +87,105 @@ const skierQuests: IQuest[] = [
       },
     ],
   },
+  {
+    name: "Silent Partner",
+    trader: Traders.Skier,
+    completed: false,
+    repReward: 0.04,
+    expReward: 23000,
+    items: ["SilencerCo Osprey 9", "M4A1 Tactical Grip"],
+    currencyReward: { name: "Euros", amount: 800 },
+    description:
+      "Hey, shadow. I've got a job that requires your knack for subtlety. We need some high-quality suppressors for a little project I've got going. Head to the secret weapon stash on Interchange and retrieve a SilencerCo Osprey 9 and an M4A1 Tactical Grip. Keep it quiet and clean.",
+    subTask: [
+      {
+        completed: false,
+        isHandover: false,
+        text: "Retrieve the SilencerCo Osprey 9 from Interchange",
+      },
+      {
+        completed: false,
+        isHandover: false,
+        text: "Retrieve the M4A1 Tactical Grip from Interchange",
+      },
+      {
+        completed: false,
+        isHandover: true,
+        text: "Hand over the SilencerCo Osprey 9 to Skier",
+      },
+      {
+        completed: false,
+        isHandover: true,
+        text: "Hand over the M4A1 Tactical Grip to Skier",
+      },
+    ],
+  },
+  {
+    name: "Market Manipulation",
+    trader: Traders.Skier,
+    completed: false,
+    repReward: 0.06,
+    expReward: 27000,
+    items: ["Bitcoin", "Chainlet"],
+    currencyReward: { name: "Roubles", amount: 200000 },
+    description:
+      "Alright, here's the deal. I need you to get your hands on some high-value items to disrupt the market a bit. Head over to the financial district and grab a Bitcoin and a Chainlet. This one's risky, but I trust you can handle it. Don't mess this up.",
+    subTask: [
+      {
+        completed: false,
+        isHandover: false,
+        text: "Find a Bitcoin in the financial district",
+      },
+      {
+        completed: false,
+        isHandover: false,
+        text: "Find a Chainlet in the financial district",
+      },
+      {
+        completed: false,
+        isHandover: true,
+        text: "Hand over the Bitcoin to Skier",
+      },
+      {
+        completed: false,
+        isHandover: true,
+        text: "Hand over the Chainlet to Skier",
+      },
+    ],
+  },
+  {
+    name: "Corporate Espionage",
+    trader: Traders.Skier,
+    completed: false,
+    repReward: 0.05,
+    expReward: 26000,
+    items: ["SSD Drive", "Intel Folder"],
+    currencyReward: { name: "Dollars", amount: 1500 },
+    description:
+      "I've got a juicy job for you. We need to gather some intel on a rival corporation. Sneak into their office at The Lab and secure an SSD Drive and an Intel Folder. Watch out for security—this one's going to be heavily guarded. You're not to be seen, understood?",
+    subTask: [
+      {
+        completed: false,
+        isHandover: false,
+        text: "Obtain the SSD Drive from The Lab",
+      },
+      {
+        completed: false,
+        isHandover: false,
+        text: "Obtain the Intel Folder from The Lab",
+      },
+      {
+        completed: false,
+        isHandover: true,
+        text: "Hand over the SSD Drive to Skier",
+      },
+      {
+        completed: false,
+        isHandover: true,
+        text: "Hand over the Intel Folder to Skier",
+      },
+    ],
+  },
 ];
 
 const mechanicQuests: IQuest[] = [

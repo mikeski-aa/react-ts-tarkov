@@ -11,6 +11,7 @@ import {
 } from "../utils/questData";
 import "../styles/taskWindow.css";
 import palceholderQuestImg from "../assets/placeholders/questimageplaceholder.png";
+import placeholderItemImg from "../assets/placeholders/itemplaceholder.png";
 
 function TaskWindow() {
   const [currentQuests, setCurrentQuests] = useState<IQuest[]>([]);
@@ -67,12 +68,19 @@ function TaskWindow() {
           <div className="questRewards">
             <div className="expReward">+ {activeQuest?.expReward} EXP</div>
             <div className="cashReward">
+              <img className="placeholderItem" src={placeholderItemImg}></img>
               {activeQuest?.currencyReward.name}{" "}
-              {activeQuest?.currencyReward.amount}
+              {`(${activeQuest?.currencyReward.amount})`}
             </div>
             {activeQuest?.items
               ? activeQuest.items.map((reward) => (
-                  <div className="itemReward">{reward}</div>
+                  <div className="itemReward">
+                    <img
+                      className="placeholderItem"
+                      src={placeholderItemImg}
+                    ></img>
+                    {reward}
+                  </div>
                 ))
               : null}
           </div>
