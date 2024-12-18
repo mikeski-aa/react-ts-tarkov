@@ -1,11 +1,12 @@
 import { IQuest } from "../interfaces";
-import { Traders } from "./traderData";
+import { Locations, QuestStatus, Traders } from "./traderData";
 
 const praporQuests: IQuest[] = [
   {
     name: "Search Mission",
     trader: Traders.Prapor,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.02,
     expReward: 28000,
     items: ["EYE MK2 Professional hand held compass", "Woods plan map"],
@@ -28,7 +29,8 @@ const praporQuests: IQuest[] = [
   {
     name: "Lost Goods",
     trader: Traders.Prapor,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.03,
     expReward: 30000,
     items: ["Military Cable", "Secure Flash Drive"],
@@ -61,7 +63,8 @@ const praporQuests: IQuest[] = [
   {
     name: "Enemy Intelligence",
     trader: Traders.Prapor,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 32000,
     items: ["Intelligence Folder", "Encrypted Data Key"],
@@ -97,7 +100,8 @@ const ragmanQuests: IQuest[] = [
   {
     name: "Fashion Statement",
     trader: Traders.Ragman,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.02,
     expReward: 15000,
     items: ["Beanie", "Gzhel-K armor"],
@@ -130,7 +134,8 @@ const ragmanQuests: IQuest[] = [
   {
     name: "Winter Collection",
     trader: Traders.Ragman,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.03,
     expReward: 18000,
     items: ["Fleece Jacket", "Thermal Pants"],
@@ -163,7 +168,8 @@ const ragmanQuests: IQuest[] = [
   {
     name: "Urban Explorer",
     trader: Traders.Ragman,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 20000,
     items: ["Urban Backpack", "Sneakers"],
@@ -196,7 +202,8 @@ const ragmanQuests: IQuest[] = [
   {
     name: "Camouflage Craze",
     trader: Traders.Ragman,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.03,
     expReward: 22000,
     items: ["Camouflage Jacket", "Camouflage Pants"],
@@ -229,7 +236,8 @@ const ragmanQuests: IQuest[] = [
   {
     name: "Retro Revival",
     trader: Traders.Ragman,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 25000,
     items: ["Leather Jacket", "Vintage Sunglasses"],
@@ -265,7 +273,8 @@ const skierQuests: IQuest[] = [
   {
     name: "Blackmailing",
     trader: Traders.Skier,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.05,
     expReward: 25000,
     items: ["SDS Drill", "GP Coin"],
@@ -288,7 +297,8 @@ const skierQuests: IQuest[] = [
   {
     name: "Silent Partner",
     trader: Traders.Skier,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 23000,
     items: ["SilencerCo Osprey 9", "M4A1 Tactical Grip"],
@@ -321,7 +331,8 @@ const skierQuests: IQuest[] = [
   {
     name: "Market Manipulation",
     trader: Traders.Skier,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.06,
     expReward: 27000,
     items: ["Bitcoin", "Chainlet"],
@@ -354,7 +365,8 @@ const skierQuests: IQuest[] = [
   {
     name: "Corporate Espionage",
     trader: Traders.Skier,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.05,
     expReward: 26000,
     items: ["SSD Drive", "Intel Folder"],
@@ -390,7 +402,8 @@ const mechanicQuests: IQuest[] = [
   {
     name: "Tech Retrieval",
     trader: Traders.Mechanic,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 22000,
     items: ["Military Power Filter", "Electric Drill"],
@@ -423,7 +436,8 @@ const mechanicQuests: IQuest[] = [
   {
     name: "Circuit Breaker",
     trader: Traders.Mechanic,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.05,
     expReward: 24000,
     items: ["Circuit Board", "Wires"],
@@ -456,7 +470,8 @@ const mechanicQuests: IQuest[] = [
   {
     name: "Weapon Calibration",
     trader: Traders.Mechanic,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 23000,
     items: ["Sniper Rifle Scope", "Adjustable Wrench"],
@@ -491,7 +506,8 @@ const therapistQuests: IQuest[] = [
   {
     name: "Medical Supplies Run",
     trader: Traders.Therapist,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.03,
     expReward: 20000,
     items: ["Salewa Kit", "Pile of Meds"],
@@ -514,7 +530,8 @@ const therapistQuests: IQuest[] = [
   {
     name: "Operation Lifeline",
     trader: Traders.Therapist,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 25000,
     items: ["IFAK Medkit", "Bandage"],
@@ -539,7 +556,8 @@ const therapistQuests: IQuest[] = [
   {
     name: "Antidote Search",
     trader: Traders.Therapist,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.05,
     expReward: 27000,
     items: ["Antidote Sample", "Morphine Injector"],
@@ -575,7 +593,8 @@ const peacekeeperQuests: IQuest[] = [
   {
     name: "Operation Aquatic Freedom",
     trader: Traders.Peacekeeper,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.05,
     expReward: 30000,
     items: ["M4A1 assault rifle", "5.56x45 NATO ammo pack"],
@@ -603,7 +622,8 @@ const peacekeeperQuests: IQuest[] = [
   {
     name: "Recon Mission",
     trader: Traders.Peacekeeper,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 28000,
     items: ["Tactical Vest", "Night Vision Goggles"],
@@ -626,7 +646,8 @@ const peacekeeperQuests: IQuest[] = [
   {
     name: "Operation Silent Night",
     trader: Traders.Peacekeeper,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.05,
     expReward: 32000,
     items: ["Suppressed Pistol", "Night Vision Scope"],
@@ -654,7 +675,8 @@ const peacekeeperQuests: IQuest[] = [
   {
     name: "Supply Drop Retrieval",
     trader: Traders.Peacekeeper,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.03,
     expReward: 25000,
     items: ["Medical Kit", "Ammunition Box"],
@@ -682,7 +704,8 @@ const peacekeeperQuests: IQuest[] = [
   {
     name: "Hostage Rescue Operation",
     trader: Traders.Peacekeeper,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.06,
     expReward: 35000,
     items: ["Rescue Harness", "Flashbang Grenade"],
@@ -713,7 +736,8 @@ const jaegerQuests: IQuest[] = [
   {
     name: "Nature's Bounty",
     trader: Traders.Jaeger,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.03,
     expReward: 20000,
     items: ["Medical Bloodset", "Survival Kit"],
@@ -746,7 +770,8 @@ const jaegerQuests: IQuest[] = [
   {
     name: "Big Game Hunt",
     trader: Traders.Jaeger,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 25000,
     items: ["Hunter's Rifle", "Box of Ammo"],
@@ -779,7 +804,8 @@ const jaegerQuests: IQuest[] = [
   {
     name: "Wilderness Survival",
     trader: Traders.Jaeger,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.05,
     expReward: 30000,
     items: ["Water Filter", "Firestarter Kit"],
@@ -812,7 +838,8 @@ const jaegerQuests: IQuest[] = [
   {
     name: "Foraging Expedition",
     trader: Traders.Jaeger,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.03,
     expReward: 22000,
     items: ["Herbal Mix", "Antibiotics"],
@@ -845,7 +872,8 @@ const jaegerQuests: IQuest[] = [
   {
     name: "Wildlife Preservation",
     trader: Traders.Jaeger,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 28000,
     items: ["Tranquilizer Gun", "Animal Trap"],
@@ -881,7 +909,8 @@ const refQuests: IQuest[] = [
   {
     name: "Gladiator Trials",
     trader: Traders.Ref,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 28000,
     items: ["Combat Knife", "Adrenaline Shot"],
@@ -914,7 +943,8 @@ const refQuests: IQuest[] = [
   {
     name: "Champion's Challenge",
     trader: Traders.Ref,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.05,
     expReward: 32000,
     items: ["Champion's Trophy", "Survival Kit"],
@@ -947,7 +977,8 @@ const refQuests: IQuest[] = [
   {
     name: "Arena Survival",
     trader: Traders.Ref,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.03,
     expReward: 26000,
     items: ["Medical Kit", "Energy Drink"],
@@ -980,7 +1011,8 @@ const refQuests: IQuest[] = [
   {
     name: "Weapon Mastery",
     trader: Traders.Peacekeeper,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.06,
     expReward: 35000,
     items: ["AK-74N Assault Rifle", "5.45x39mm Ammo Box"],
@@ -1016,7 +1048,8 @@ const fenceQuests: IQuest[] = [
   {
     name: "Scavenger's Trade",
     trader: Traders.Fence,
-    completed: false,
+    questStatus: QuestStatus.Accepted,
+    location: Locations.Customs,
     repReward: 0.04,
     expReward: 25000,
     items: ["Rare Loot Item", "Valuable Artifact"],

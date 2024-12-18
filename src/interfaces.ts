@@ -1,5 +1,10 @@
 import { Dispatch, SetStateAction } from "react";
-import { Traders, WindowState } from "./utils/traderData";
+import {
+  Locations,
+  QuestStatus,
+  Traders,
+  WindowState,
+} from "./utils/traderData";
 
 export interface IGridObject {
   name: string;
@@ -42,12 +47,21 @@ export interface ICurrReward {
   amount: number;
 }
 
+export interface ISubQuestTask {
+  completed: boolean;
+  isHandover: boolean;
+  text: string;
+}
+
 export interface IQuest {
   name: string;
   trader: Traders;
-  completed: boolean;
+  questStatus: QuestStatus;
   repReward: number;
   expReward: number;
   items: string[];
   currencyReward: ICurrReward;
+  description: string;
+  subTask: ISubQuestTask[];
+  location: Locations;
 }

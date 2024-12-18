@@ -18,6 +18,18 @@ enum WindowState {
   Services,
 }
 
+enum Locations {
+  Customs,
+  Factory,
+  Streets,
+  Interchange,
+  Reserve,
+  Lighthouse,
+  Lab,
+  Woods,
+  Shoreline,
+}
+
 const tradersData: ITraders[] = [
   {
     name: "Prapor",
@@ -662,4 +674,4 @@ const tradersData: ITraders[] = [
   },
 ];
 
-export { tradersData, Traders, WindowState };
+export { tradersData, Traders, WindowState, Locations };
