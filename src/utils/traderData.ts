@@ -19,15 +19,21 @@ enum WindowState {
 }
 
 enum Locations {
-  Customs,
-  Factory,
-  Streets,
-  Interchange,
-  Reserve,
-  Lighthouse,
-  Lab,
-  Woods,
-  Shoreline,
+  Customs = "Customs",
+  Factory = "Factory",
+  Streets = "Streets of Tarkov",
+  Interchange = "Interchange",
+  Reserve = "Reserve",
+  Lighthouse = "Lighthouse",
+  Lab = "The Lab",
+  Woods = "Woods",
+  Shoreline = "Shoreline",
+}
+
+enum QuestStatus {
+  Accepted,
+  Complete,
+  Available,
 }
 
 const tradersData: ITraders[] = [
@@ -674,4 +680,4 @@ const tradersData: ITraders[] = [
   },
 ];
 
-export { tradersData, Traders, WindowState, Locations };
+export { tradersData, Traders, WindowState, Locations, QuestStatus };

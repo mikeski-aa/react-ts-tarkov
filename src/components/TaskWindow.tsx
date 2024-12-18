@@ -76,7 +76,9 @@ function TaskWindow() {
     <div className="taskHolder">
       <div className="taskHolderHeader">
         <div className="leftHeader">PLACEHOLDER COMPLETE</div>
-        <div className="rightHeader">{activeQuest?.name}</div>
+        <div className="rightHeader">
+          {activeQuest?.name} - {activeQuest?.location}
+        </div>
       </div>
       <div className="mainTaskWindow">
         <div className="leftMainList">
@@ -85,7 +87,8 @@ function TaskWindow() {
               className="questButton"
               onClick={() => handleQuestClick(quest.name)}
             >
-              {quest.name}
+              <div className="btnInnerDiv">{quest.name}</div>{" "}
+              <div className="questMap">{quest.location}</div>
             </button>
           ))}
         </div>
