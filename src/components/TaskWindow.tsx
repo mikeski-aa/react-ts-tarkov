@@ -87,6 +87,7 @@ function TaskWindow() {
               className="questButton"
               onClick={() => handleQuestClick(quest.name)}
             >
+              <div className="xd"></div>
               <div className="btnInnerDiv">{quest.name}</div>{" "}
               <div className="questMap">{quest.location}</div>
             </button>
