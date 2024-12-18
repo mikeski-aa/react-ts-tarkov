@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { IQuest } from "../interfaces";
 import { GlobalContext } from "../App";
-import { Traders } from "../utils/traderData";
+import { Locations, Traders } from "../utils/traderData";
 import {
   mechanicQuests,
   peacekeeperQuests,
@@ -72,10 +72,23 @@ function TaskWindow() {
     }
   };
 
+  const locationArray = Object.values(Locations);
+
   return (
     <div className="taskHolder">
       <div className="taskHolderHeader">
-        <div className="leftHeader">PLACEHOLDER COMPLETE</div>
+        <div className="leftHeader">
+          <div className="leftHeaderSection">PLACEHOLDER</div>
+          <div className="rightHeaderSection">
+            <label htmlFor="locationDropdown">Select quest map</label>
+            <select onChange={() => alert("changed")}>
+              <option>All</option>
+              {locationArray.map((location) => (
+                <option>{location}</option>
+              ))}
+            </select>
+          </div>
+        </div>
         <div className="rightHeader">
           {activeQuest?.name} - {activeQuest?.location}
         </div>
