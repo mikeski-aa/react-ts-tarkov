@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { SyntheticEvent, useContext, useEffect, useState } from "react";
 import { IQuest } from "../interfaces";
 import { GlobalContext } from "../App";
 import { Locations, Traders } from "../utils/traderData";
@@ -84,7 +84,11 @@ function TaskWindow() {
     }
   };
 
-  const locationArray = Object.values(Locations);
+  const handleOptionClick = (e: SyntheticEvent) => {
+    const target = e.target as HTMLInputElement;
+
+    console.log(target.value);
+  };
 
   return (
     <div className="taskHolder">
@@ -93,10 +97,12 @@ function TaskWindow() {
           <div className="leftHeaderSection">PLACEHOLDER</div>
           <div className="rightHeaderSection">
             <label htmlFor="locationDropdown">Select quest map</label>
-            <select onChange={(e) => console.log(e.target.value)}>
+            <select onChange={(e) => handleOptionClick(e)}>
               <option value={0}>All</option>
-              {currentLocations.map((location) => (
-                <option value={location}>{location}</option>
+              {currentLocations.map((location, index) => (
+                <option value={location} key={index}>
+                  {location}
+                </option>
               ))}
             </select>
           </div>
