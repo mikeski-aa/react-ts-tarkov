@@ -78,7 +78,8 @@
 
 .expReward,
 .cashReward,
-.itemReward {
+.itemReward,
+.repReward {
   width: 160px;
   background-color: rgba(128, 128, 128, 0.575);
   height: 60px;
@@ -121,4 +122,8 @@
 .rightHeaderSection {
   display: flex;
   flex-direction: column;
+}
+
+.rewardTxt {
+  width: 100%;
 }

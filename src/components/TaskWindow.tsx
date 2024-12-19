@@ -25,6 +25,7 @@ function TaskWindow() {
   const globalContext = useContext(GlobalContext);
 
   useEffect(() => {
+    setFilteredQuests([]);
     switch (globalContext.traderSelect) {
       case Traders.Prapor:
         setCurrentQuests(praporQuests);
@@ -162,7 +163,15 @@ function TaskWindow() {
             ))}
           </div>
           <div className="questRewards">
-            <div className="expReward">+ {activeQuest?.expReward} EXP</div>
+            <div className="expReward">
+              <div className="rewardTxt">+ {activeQuest?.expReward} EXP</div>
+            </div>
+            <div className="repReward">
+              <div className="rewardTxt">
+                + {activeQuest?.repReward} REP{" "}
+                {activeQuest ? `(${Traders[activeQuest.trader]})` : null}
+              </div>
+            </div>
             <div className="cashReward">
               <img className="placeholderItem" src={placeholderItemImg}></img>
               {activeQuest?.currencyReward.name}{" "}
