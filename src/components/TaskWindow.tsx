@@ -20,6 +20,7 @@ import placeholderItemImg from "../assets/placeholders/itemplaceholder.png";
 function TaskWindow() {
   const [currentQuests, setCurrentQuests] = useState<IQuest[]>([]);
   const [activeQuest, setActiveQuest] = useState<IQuest>();
+  const [currentLocations, setCurrentLocations] = useState<string[]>([]);
   const globalContext = useContext(GlobalContext);
 
   useEffect(() => {
@@ -63,6 +64,17 @@ function TaskWindow() {
     }
   }, [globalContext.traderSelect]);
 
+  useEffect(() => {
+    let tempArray: string[] = [];
+    for (let x = 0; x < currentQuests.length; x++) {
+      if (!tempArray.includes(currentQuests[x].location)) {
+        tempArray.push(currentQuests[x].location);
+      }
+    }
+
+    setCurrentLocations(tempArray);
+  }, [currentQuests]);
+
   const handleQuestClick = (questName: string) => {
     const filteredQuests = currentQuests.filter(
       (item) => item.name === questName
@@ -81,10 +93,10 @@ function TaskWindow() {
           <div className="leftHeaderSection">PLACEHOLDER</div>
           <div className="rightHeaderSection">
             <label htmlFor="locationDropdown">Select quest map</label>
-            <select onChange={() => alert("changed")}>
-              <option>All</option>
-              {locationArray.map((location) => (
-                <option>{location}</option>
+            <select onChange={(e) => console.log(e.target.value)}>
+              <option value={0}>All</option>
+              {currentLocations.map((location) => (
+                <option value={location}>{location}</option>
               ))}
             </select>
           </div>
@@ -95,10 +107,11 @@ function TaskWindow() {
       </div>
       <div className="mainTaskWindow">
         <div className="leftMainList">
-          {currentQuests.map((quest) => (
+          {currentQuests.map((quest, index) => (
             <button
               className="questButton"
               onClick={() => handleQuestClick(quest.name)}
+              key={index}
             >
               <div className="xd"></div>
               <div className="btnInnerDiv">{quest.name}</div>{" "}
