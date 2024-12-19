@@ -19,6 +19,7 @@ import placeholderItemImg from "../assets/placeholders/itemplaceholder.png";
 
 function TaskWindow() {
   const [currentQuests, setCurrentQuests] = useState<IQuest[]>([]);
+  const [filteredQuests, setFilteredQuests] = useState<IQuest[]>([]);
   const [activeQuest, setActiveQuest] = useState<IQuest>();
   const [currentLocations, setCurrentLocations] = useState<string[]>([]);
   const globalContext = useContext(GlobalContext);
@@ -87,7 +88,18 @@ function TaskWindow() {
   const handleOptionClick = (e: SyntheticEvent) => {
     const target = e.target as HTMLInputElement;
 
-    console.log(target.value);
+    switch (target.value) {
+      case "0":
+        setFilteredQuests([]);
+        break;
+
+      default:
+        let filteredQuests = currentQuests.filter(
+          (item) => item.location === target.value
+        );
+        setFilteredQuests(filteredQuests);
+        break;
+    }
   };
 
   return (
@@ -113,17 +125,29 @@ function TaskWindow() {
       </div>
       <div className="mainTaskWindow">
         <div className="leftMainList">
-          {currentQuests.map((quest, index) => (
-            <button
-              className="questButton"
-              onClick={() => handleQuestClick(quest.name)}
-              key={index}
-            >
-              <div className="xd"></div>
-              <div className="btnInnerDiv">{quest.name}</div>{" "}
-              <div className="questMap">{quest.location}</div>
-            </button>
-          ))}
+          {filteredQuests.length === 0
+            ? currentQuests.map((quest, index) => (
+                <button
+                  className="questButton"
+                  onClick={() => handleQuestClick(quest.name)}
+                  key={index}
+                >
+                  <div className="xd"></div>
+                  <div className="btnInnerDiv">{quest.name}</div>{" "}
+                  <div className="questMap">{quest.location}</div>
+                </button>
+              ))
+            : filteredQuests.map((quest, index) => (
+                <button
+                  className="questButton"
+                  onClick={() => handleQuestClick(quest.name)}
+                  key={index}
+                >
+                  <div className="xd"></div>
+                  <div className="btnInnerDiv">{quest.name}</div>{" "}
+                  <div className="questMap">{quest.location}</div>
+                </button>
+              ))}
         </div>
         <div className="rightMainQuest">
           <div className="questDetails">
@@ -131,8 +155,10 @@ function TaskWindow() {
             <div className="detailsText">{activeQuest?.description}</div>
           </div>
           <div className="questObj">
-            {activeQuest?.subTask.map((sub) => (
-              <div className="taskItem">{sub.text}</div>
+            {activeQuest?.subTask.map((sub, index) => (
+              <div className="taskItem" key={index}>
+                {sub.text}
+              </div>
             ))}
           </div>
           <div className="questRewards">
