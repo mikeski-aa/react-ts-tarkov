@@ -1,13 +1,9 @@
-import { useContext } from "react";
-import { GlobalContext } from "../App";
-import { Traders } from "../utils/traderData";
 import ProfilePlaceholder from "../assets/placeholders/profileplaceholder.svg?react";
 import "../styles/playerInfo.css";
 import RepIcon from "../assets/icons/repicon.svg?react";
+import Thingy from "../assets/placeholders/thingy.webp";
 
 function PlayerInfo() {
-  const globalContext = useContext(GlobalContext);
-
   return (
     <div className="playerProfileContainer">
       <div className="ppLeft">
@@ -48,7 +44,10 @@ function PlayerInfo() {
         </div>
       </div>
       <div className="ppRight">
-        <div className="ppLevel">44</div>
+        <div className="ppLevel">
+          <img src={Thingy} className="thingyThing"></img>
+          <div className="lvlText">44</div>
+        </div>
         <ProfilePlaceholder className="ppImage" />
       </div>
     </div>

@@ -52,6 +52,20 @@
 .ppLevel {
   position: absolute;
   z-index: 10;
+  display: flex;
+  color: black;
+}
+
+.lvlText {
+  z-index: 15;
+  margin-left: 1px;
+  font-weight: bold;
+}
+
+.thingyThing {
+  width: 20px;
+  height: 25px;
+  position: absolute;
 }
 
 .currentStanding,

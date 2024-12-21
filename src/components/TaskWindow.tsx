@@ -130,7 +130,11 @@ function TaskWindow() {
           {filteredQuests.length === 0
             ? currentQuests.map((quest, index) => (
                 <button
-                  className="questButton"
+                  className={
+                    quest.name === activeQuest?.name
+                      ? "questButton active"
+                      : "questButton"
+                  }
                   onClick={() => handleQuestClick(quest.name)}
                   key={index}
                 >
@@ -141,7 +145,11 @@ function TaskWindow() {
               ))
             : filteredQuests.map((quest, index) => (
                 <button
-                  className="questButton"
+                  className={
+                    quest.name === activeQuest?.name
+                      ? "questButton active"
+                      : "questButton"
+                  }
                   onClick={() => handleQuestClick(quest.name)}
                   key={index}
                 >
