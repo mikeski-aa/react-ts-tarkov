@@ -22,6 +22,18 @@
 .rightHeader {
   width: 70%;
   background-color: orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.rightHeaderTitle {
+  margin-left: 5px;
+}
+
+.rightHeaderLocation {
+  margin-right: 5px;
 }
 
 .mainTaskWindow {
@@ -30,13 +42,13 @@
 
 .leftMainList {
   width: 30%;
-  background-color: greenyellow;
+  background-color: rgba(24, 9, 1, 0.185);
   height: 100%;
 }
 
 .rightMainQuest {
   width: 70%;
-  background-color: yellow;
+  background-color: rgba(56, 56, 56, 0.548);
   display: flex;
   flex-direction: column;
 }
@@ -65,6 +77,8 @@
   width: 400px;
   background-color: grey;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .questRewards {
@@ -106,17 +120,25 @@
   height: 40px;
   font-weight: bold;
   font-size: 1rem;
-}
-
-.questMap {
-  font-weight: 400;
-}
-
-.questButton {
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.26);
+  color: white;
+}
+
+.questMap {
+  font-weight: 400;
+  width: 80px;
+}
+
+.btnInnerDiv {
+  width: 250pxx;
+}
+
+.questButton:hover {
+  cursor: pointer;
 }
 
 .rightHeaderSection {

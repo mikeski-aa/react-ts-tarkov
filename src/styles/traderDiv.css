@@ -270,11 +270,10 @@
 .bbButtonConfirm {
   width: 120px;
   margin-bottom: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   outline: none;
   border: 2px solid black;
-  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -291,7 +290,6 @@
   gap: 5px;
   font-size: 1rem;
   justify-content: center;
-  font-weight: bold;
 }
 
 .bbImage {

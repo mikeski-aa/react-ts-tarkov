@@ -48,11 +48,11 @@ function BuyBox({ item }: { item: ITraderItem }) {
       <div className="bbButonHolder">
         <button className="bbButtonConfirm" onClick={handleCloseClick}>
           <ScBuy className="buyBoxIcon" />
-          Confirm
+          CONFIRM
         </button>
         <button className="bbButtonCancel" onClick={handleCloseClick}>
           <Cross className="buyBoxIcon" />
-          Close
+          CLOSE
         </button>
       </div>
     </div>

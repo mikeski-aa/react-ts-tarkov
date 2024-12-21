@@ -121,7 +121,8 @@ function TaskWindow() {
           </div>
         </div>
         <div className="rightHeader">
-          {activeQuest?.name} - {activeQuest?.location}
+          <div className="rightHeaderTitle">{activeQuest?.name}</div>{" "}
+          <div className="rightHeaderLocation">{activeQuest?.location}</div>
         </div>
       </div>
       <div className="mainTaskWindow">
