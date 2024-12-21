@@ -158,6 +158,7 @@ function TaskWindow() {
           <div className="questObj">
             {activeQuest?.subTask.map((sub, index) => (
               <div className="taskItem" key={index}>
+                <input type="checkbox"></input>
                 {sub.text}
               </div>
             ))}

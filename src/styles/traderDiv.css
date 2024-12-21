@@ -214,9 +214,11 @@
   opacity: 1;
   min-width: 180px;
   overflow: hidden;
-  background-color: rgb(136, 136, 136);
+  background-color: rgba(0, 0, 0, 0.205);
   padding: 5px;
-  border: 2px solid black;
+  border: 2px solid #cfcbb5;
+  margin-right: 20px;
+  color: white;
 }
 
 .buyBox.open > * {
@@ -268,21 +270,42 @@
 .bbButtonConfirm {
   width: 120px;
   margin-bottom: 5px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   outline: none;
-  border: 2px solid white;
+  border: 2px solid black;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
 }
 
 .bbButtonCancel {
   width: 100px;
-  background-color: grey;
+  background-color: rgba(214, 214, 214, 0.781);
   outline: none;
-  border: 2px solid white;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  justify-content: center;
+  font-weight: bold;
 }
 
 .bbImage {
   width: 120px;
   height: 120px;
+}
+
+.buyBoxIcon {
+  width: 15px;
+  height: 15px;
+}
+
+.bbButtonCancel:hover,
+.bbButtonConfirm:hover {
+  cursor: pointer;
+  border: 2px solid #cfcbb5;
 }

@@ -49,7 +49,7 @@ function FooterBar() {
         </button>
         <button className="footerBtn">
           <Handbook className="footerIcon" />
-          HANDBOOK
+          QUESTS
         </button>
         <button className="footerBtn">
           <Messages className="footerIcon" />

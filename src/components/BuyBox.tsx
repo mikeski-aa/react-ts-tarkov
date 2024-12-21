@@ -2,6 +2,8 @@ import { SyntheticEvent, useContext, useState } from "react";
 import { ITraderItem } from "../interfaces";
 import { GlobalContext } from "../App";
 import WeaponPlaceholder from "../assets/placeholders/weaponplaceholder.png";
+import ScBuy from "../assets/icons/scBuy.svg?react";
+import Cross from "../assets/icons/cross.svg?react";
 
 function BuyBox({ item }: { item: ITraderItem }) {
   const globalContext = useContext(GlobalContext);
@@ -45,9 +47,11 @@ function BuyBox({ item }: { item: ITraderItem }) {
       </div>
       <div className="bbButonHolder">
         <button className="bbButtonConfirm" onClick={handleCloseClick}>
+          <ScBuy className="buyBoxIcon" />
           Confirm
         </button>
         <button className="bbButtonCancel" onClick={handleCloseClick}>
+          <Cross className="buyBoxIcon" />
           Close
         </button>
       </div>
